@@ -30,12 +30,9 @@
     "start": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.config.js",
     "start:dist": "cross-env NODE_ENV=production webpack serve --config ./config/webpack.config.js && http-server ./dist -o",
     "setup": "node ./config/site.setup.js",
-    "postinstall": "node ./config/site.setup.js",
     "lint:js": "./node_modules/.bin/eslint \"src/**/*.js\"",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
-    "copy": "rm -rf ~/projects/umer4ik.github.io/moonglade && cp -R dist/ ~/projects/umer4ik.github.io/moonglade",
-    "build:dist": "npm run build && npm run copy",
     "deploy": "node ./config/site.deploy.js"
   },
   "devDependencies": {
@@ -64,7 +61,6 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "postcss-sass": "^0.4.1",
