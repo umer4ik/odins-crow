@@ -1,0 +1,8 @@
+@import "~sanitize.css";
+@import "mixins.scss";
+@import "main.scss";
+@import "../parts/header/header.scss";
+/* stylelint-disable scss/at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

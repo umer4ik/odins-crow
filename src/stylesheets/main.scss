@@ -1,0 +1,36 @@
+@font-face {
+  font-family: Plain;
+  src:
+    url("../fonts/Plain-Bold.woff") format("woff"),
+    url("../fonts/Plain-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Plain;
+  src:
+    url("../fonts/Plain-Regular.woff") format("woff"),
+    url("../fonts/Plain-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  font-size: 16px;
+}
+html,
+body {
+  height: 100%;
+  font-family: Plain, sans-serif;
+}
+:root {
+  --white: #F1EDE8;
+  --black: #2B2B2B;
+  --color1: #C5C6C1;
+  --color2: #FBD4B7;
+  --color3: #AFA7A2;
+  --color4: #82887C;
+  --color5: #C9C8C9;
+  --color6: #E5D5C3;
+  --color7: #CDC0B1;
+  --easing: cubic-bezier(.4, 0, 0, 1);
+}
