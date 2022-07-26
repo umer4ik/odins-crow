@@ -1,0 +1,21 @@
+.gentle-underline {
+  position: relative;
+  text-decoration: underline;
+  @media (min-width: 1024px) {
+    text-decoration: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 3px;
+    left: 0;
+    height: 2px;
+    background-color: var(--black);
+    display: none;
+    @media (min-width: 1024px) {
+      display: block;
+      height: 3px;
+    }
+  }
+}

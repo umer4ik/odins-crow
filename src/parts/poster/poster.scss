@@ -1,0 +1,35 @@
+.poster {
+  @media (min-width: 768px) {
+    min-height: min(100vh, 690px);
+  }
+  &__number {
+    font-size: 46px;
+    @media (min-width: 1024px) {
+      font-size: 187px;
+    }
+  }
+  &__title {
+    margin-top: 339px;
+    font-size: 34px;
+    @media (min-width: 1024px) {
+      margin-top: unset;
+      font-size: 60px;
+    }
+  }
+  &--color7 {
+    background-color: var(--color7);
+  }
+  &--color3 {
+    background-color: var(--color3);
+  }
+  &--color4 {
+    background-color: var(--color4);
+  }
+  &__footer {
+    height: 20px;
+    font-size: 10px;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+    width: calc(100% - 40px);
+  }
+}

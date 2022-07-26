@@ -7,4 +7,5 @@ mixin intro(title, subtitle)
         div(class=line)
     .intro__description.font-bold.tracking-tighter.flex.items-center.justify-between
       span.leading-none #{subtitle}
-      include ../icons/intro-description-arrow-down.pug
+      span(class="hidden md:block")
+        include ../icons/intro-description-arrow-down.pug
