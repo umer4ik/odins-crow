@@ -1,3 +1,15 @@
+:root {
+  --white: #F1EDE8;
+  --black: #2B2B2B;
+  --color1: #C5C6C1;
+  --color2: #FBD4B7;
+  --color3: #AFA7A2;
+  --color4: #82887C;
+  --color5: #C9C8C9;
+  --color6: #E5D5C3;
+  --color7: #CDC0B1;
+  --easing: cubic-bezier(.4, 0, 0, 1);
+}
 @font-face {
   font-family: Plain;
   src:
@@ -16,21 +28,14 @@
 }
 html {
   font-size: 16px;
+  color: var(--black);
 }
 html,
 body {
   height: 100%;
   font-family: Plain, sans-serif;
 }
-:root {
-  --white: #F1EDE8;
-  --black: #2B2B2B;
-  --color1: #C5C6C1;
-  --color2: #FBD4B7;
-  --color3: #AFA7A2;
-  --color4: #82887C;
-  --color5: #C9C8C9;
-  --color6: #E5D5C3;
-  --color7: #CDC0B1;
-  --easing: cubic-bezier(.4, 0, 0, 1);
+body {
+  background-color: var(--white);
+  padding-top: 1px;
 }

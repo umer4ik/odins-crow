@@ -1,0 +1,56 @@
+.intro {
+  margin-top: 152px;
+  @media (min-width: 1024px) {
+    margin-top: 213px;
+  }
+  &__title {
+    font-size: 46px;
+    @media (min-width: 1024px) {
+      font-size: 187px;
+    }
+  }
+  &__description {
+    color: var(--white);
+    font-size: 20px;
+    background-color: var(--black);
+    margin-top: 10px;
+    @media (min-width: 1024px) {
+      font-size: 36px;
+      padding: 18px 20px;
+    }
+  }
+}
+.lines {
+  position: relative;
+  height: 100px;
+  &__line {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background-color: var(--black);
+    &--1 {
+      top: 0;
+      height: 1px;
+    }
+    &--2 {
+      top: 19px;
+      height: 2px;
+    }
+    &--3 {
+      top: 35px;
+      height: 4px;
+    }
+    &--4 {
+      top: 54px;
+      height: 6px;
+    }
+    &--5 {
+      top: 72px;
+      height: 8px;
+    }
+    &--6 {
+      top: 90px;
+      height: 10px;
+    }
+  }
+}

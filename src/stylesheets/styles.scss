@@ -2,6 +2,10 @@
 @import "mixins.scss";
 @import "main.scss";
 @import "../parts/header/header.scss";
+@import "link-hover-underline.scss";
+@import "link-underlined.scss";
+@import "section.scss";
+@import "../parts/intro/intro.scss";
 /* stylelint-disable scss/at-rule-no-unknown */
 @tailwind base;
 @tailwind components;

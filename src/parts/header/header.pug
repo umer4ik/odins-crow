@@ -1,2 +1,9 @@
-header.header
-  h1.text-3xl.font-bold.underline Hello tailwind
+header.header.fixed.w-full.top-0.left-0
+  .header__inner.flex.h-full.justify-between.items-center
+    a(href="/").header__logo-link.font-bold Odin’s Crow
+    .header__pages(class="md:block").hidden.ml-auto.mr-24
+      a(href="/about.html").header__page-link.link-hover-underline About
+      a(href="/referral-partners.html").header__page-link.ml-4.link-hover-underline Referral Partners
+    a(href="mailto:info@obys.agency", class="md:flex header__contacts-link link-underlined hidden.items-center")
+      include ../icons/header-contact-icon.pug
+      span.ml-2 Get in touch

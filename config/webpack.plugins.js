@@ -60,12 +60,12 @@ const paths = [];
 const generateHTMLPlugins = () => glob.sync('./src/*.pug').map((dir) => {
   const filename = path.basename(dir);
 
-  // if (filename !== '404.pug') {
+  if (filename !== '404.pug') {
     paths.push(filename);
-  // }
+  }
 
   return new HTMLWebpackPlugin({
-    // filename,
+    filename: filename.replace('pug', 'html'),
     template: path.join(config.root, config.paths.src, filename),
     meta: {
       viewport: config.viewport,
@@ -129,9 +129,25 @@ class GoogleAnalyticsPlugin {
   }
 }
 
+class TailwindInjectCDNPlugin {
+  apply(compiler) {
+    compiler.hooks.compilation.tap('TailwindInjectCDNPlugin', (compilation) => {
+      HTMLWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
+        'TailwindInjectCDNPlugin',
+        (data, cb) => {
+          data.html = data.html.replace('</head>', '<script src="https://cdn.tailwindcss.com"></script></head>');
+          cb(null, data);
+        },
+      );
+    });
+  }
+}
+
 const google = new GoogleAnalyticsPlugin({
   id: config.googleAnalyticsUA,
 });
+
+const tailwindInjectCDN = new TailwindInjectCDNPlugin();
 
 module.exports = [
   clean,
@@ -146,4 +162,5 @@ module.exports = [
   config.googleAnalyticsUA && google,
   webpackBar,
   config.env === 'development' && hmr,
+  config.env === 'development' && tailwindInjectCDN,
 ].filter(Boolean);

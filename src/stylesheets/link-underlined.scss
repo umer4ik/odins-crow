@@ -1,0 +1,39 @@
+.link-underlined {
+  span {
+    position: relative;
+    display: inline-block;
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: currentcolor;
+      transition: transform .6s var(--easing);
+    }
+    &::before {
+      transform: scaleX(1);
+      transform-origin: left center;
+      transition-delay: .1s;
+    }
+    &::after {
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition-delay: 0s;
+    }
+  }
+  &:hover span {
+    &::before {
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition-delay: 0s;
+    }
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left center;
+      transition-delay: .1s;
+    }
+  }
+}
