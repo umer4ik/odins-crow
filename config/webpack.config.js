@@ -1,8 +1,8 @@
-const path = require('path');
+const path = require('path')
 
-const config = require('./site.config');
-const loaders = require('./webpack.loaders');
-const plugins = require('./webpack.plugins');
+const config = require('./site.config')
+const loaders = require('./webpack.loaders')
+const plugins = require('./webpack.plugins')
 
 module.exports = {
   context: path.join(config.root, config.paths.src),
@@ -32,4 +32,4 @@ module.exports = {
     rules: loaders,
   },
   plugins,
-};
+}

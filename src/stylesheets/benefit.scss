@@ -1,0 +1,34 @@
+.benefit {
+  &__advantages {
+    @media (min-width: 768px) {
+      background-image:
+        linear-gradient(
+          0deg,
+          transparent 0,
+          transparent 39px,
+          var(--black) 39px,
+          var(--black) 40px
+        );
+      background-size: 100% 40px;
+    }
+    background-image:
+      linear-gradient(
+        0deg,
+        transparent 0,
+        transparent 31px,
+        var(--black) 31px,
+        var(--black) 32px
+      );
+    background-size: 100% 32px;
+    background-repeat: repeat-y;
+  }
+  &__advantage {
+    line-height: 32px;
+    /* stylelint-disable-next-line selector-class-pattern */
+    &.md\:text-xl {
+      @media (min-width: 768px) {
+        line-height: 40px;
+      }
+    }
+  }
+}

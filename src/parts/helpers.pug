@@ -1,0 +1,4 @@
+mixin flipLink(text, href)
+  a(href=href target="__blank" class="flip-link text-base md:text-xl block bt-1-black bb-1-black relative overflow-hidden tracking-tight")
+    span(class="flip-link__text flip-link__text--default") #{text}
+    span(class="flip-link__text flip-link__text--hover") #{text}

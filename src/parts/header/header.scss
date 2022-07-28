@@ -1,13 +1,21 @@
 .header {
   padding: 0 20px;
   height: 70px;
+  background-color: var(--white);
+  z-index: 3;
   @media (min-width: 768px) {
     height: 64px;
+    transition: transform .4s var(--easing);
   }
   &__logo-link {
     font-size: 22px;
     @media (min-width: 768px) {
       font-size: 27px;
+    }
+  }
+  &.js-hidden {
+    @media (min-width: 768px) {
+      /* transform: translateY(-100%); */
     }
   }
 }

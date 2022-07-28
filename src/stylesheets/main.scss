@@ -9,6 +9,11 @@
   --color6: #E5D5C3;
   --color7: #CDC0B1;
   --easing: cubic-bezier(.4, 0, 0, 1);
+  --black-rgb: 43 43 43;
+}
+::selection {
+  background: var(--black);
+  color: var(--white);
 }
 @font-face {
   font-family: Plain;

@@ -1,10 +1,10 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('path')
+const fs = require('fs')
 
-let ROOT = process.env.PWD;
+let ROOT = process.env.PWD
 
 if (!ROOT) {
-  ROOT = process.cwd();
+  ROOT = process.cwd()
 }
 
 const config = {
@@ -43,6 +43,6 @@ const config = {
   package: JSON.parse(
     fs.readFileSync(path.join(ROOT, '/package.json'), { encoding: 'utf-8' }),
   ),
-};
+}
 
-module.exports = config;
+module.exports = config

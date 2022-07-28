@@ -1,0 +1,23 @@
+.time-target {
+  height: 400vh;
+}
+.time-trigger {
+  @media (min-width: 1024px) {
+    height: 100vh;
+    padding-top: 1px;
+  }
+}
+.time-blocks {
+  @apply mt-8;
+  @apply md:mt-10;
+  @apply md:-mx-2.5;
+}
+.time-block {
+  height: calc(100vh - 375px);
+  width: calc(100% - 20px);
+  min-width: calc(100% - 20px);
+  &--3 {
+    width: calc(50% - 20px);
+    min-width: calc(50% - 20px);
+  }
+}

@@ -3,5 +3,10 @@ module.exports = {
   "env": {
     "browser": true,
     "node": true
+  },
+  "rules": {
+    "no-new": "off",
+    "semi": ["error", "never"],
+    "no-console": "off",
   }
 };

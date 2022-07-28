@@ -2,5 +2,15 @@
   "css.validate": false,
   "scss.validate": false,
   "less.validate": false,
-  "stylelint.validate": ["css", "scss"]
+  "stylelint.validate": ["css", "scss"],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "pug": "html"
+  },
+  "tailwindCSS.emmetCompletions": true
 }

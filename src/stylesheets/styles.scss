@@ -1,13 +1,18 @@
 @import "~sanitize.css";
+@import "locomotive-scroll.scss";
 @import "mixins.scss";
 @import "main.scss";
 @import "../parts/header/header.scss";
 @import "link-hover-underline.scss";
 @import "link-underlined.scss";
-@import "section.scss";
 @import "../parts/intro/intro.scss";
 @import "../parts/poster/poster.scss";
 @import "gentle-underline.scss";
+@import "helpers.scss";
+@import "../parts/section/section.scss";
+@import "benefit.scss";
+@import "time.scss";
+@import "structures.scss";
 /* stylelint-disable scss/at-rule-no-unknown */
 @tailwind base;
 @tailwind components;

@@ -1,0 +1,33 @@
+include ../section/section.pug
+div(data-scroll data-scroll-offset="20" data-scroll-sticky data-scroll-target="#time-target" class="time-trigger")
+  div(class="section md:mt-40 mt-20 md:mb-10 mb-8")
+    +sectionTitle('We work fast\nand keep it easy', '1.4')
+    div(class="time-blocks flex")
+      div(class="time-block bg-color5 relative flex items-center justify-center md:mx-2.5 time-block--1")
+        .time-block__action.absolute.flex.items-center.top-5.left-5
+          span.mr-3
+            include ../icons/timer.pug
+          span.time-block__action-title Respond in
+        div(class="text-4xl font-bold") 48 hours
+        .absolute.bottom-5.left-5
+          include ../icons/number-1.pug
+      
+      div(class="time-block bg-color5 relative flex items-center justify-center md:mx-2.5 time-block--2")
+        .time-block__action.absolute.flex.items-center.top-5.left-5
+          span.mr-3
+            include ../icons/alarm.pug
+          span.time-block__action-title Make an offer in
+        div(class="text-4xl font-bold") 7 days
+        .absolute.bottom-5.left-5
+          include ../icons/number-2.pug
+      
+      div(class="time-block bg-color4 relative flex items-center justify-center md:mx-2.5 time-block--3")
+        .time-block__action.absolute.flex.items-center.top-5.left-5
+          span.mr-3
+            include ../icons/done.pug
+          span.time-block__action-title Close the deal in
+        div(class="text-4xl font-bold") 1 month
+        div(class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" id="ellipse")
+          include ../icons/ellipse.pug
+        .absolute.bottom-5.left-5
+          include ../icons/number-3.pug

@@ -1,8 +1,8 @@
-const path = require('path');
-const config = require('./site.config');
-const FtpDeploy = require('ftp-deploy');
+const path = require('path')
+const FtpDeploy = require('ftp-deploy')
+const config = require('./site.config')
 
-const ftpDeploy = new FtpDeploy();
+const ftpDeploy = new FtpDeploy()
 
 ftpDeploy.deploy({
   // FTP username
@@ -31,4 +31,4 @@ ftpDeploy.deploy({
 
   // FTP Mode
   forcePasv: true,
-});
+})

@@ -70,6 +70,7 @@ const generateHTMLPlugins = () => glob.sync('./src/*.pug').map((dir) => {
     meta: {
       viewport: config.viewport,
     },
+    minify: false,
   });
 });
 
