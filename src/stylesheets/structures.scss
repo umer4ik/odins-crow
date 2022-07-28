@@ -1,5 +1,9 @@
 .structures-target {
+  display: none;
   height: 300vh;
+  @media (min-width: 1024px) {
+    display: block;
+  }
 }
 .structures-block {
   width: calc(33.33% - 20px);
@@ -10,11 +14,12 @@
 }
 .structures {
   &__main {
+    overflow: hidden;
     min-height: calc(100vh - 167px);
     margin-top: -135px;
   }
   &__text {
-    width: calc(33.33% - 20px);
+    width: 459px;
     position: relative;
   }
   &__text-block {
@@ -40,8 +45,9 @@
     position: absolute;
     width: 65.66%;
     left: 9%;
-    top: 40%;
+    top: 50%;
     transform: translate(0, -50%);
+    height: 100%;
   }
   &__numbers {
     overflow: hidden;

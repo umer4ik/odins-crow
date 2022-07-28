@@ -1,7 +1,8 @@
 .gentle-underline {
   position: relative;
   text-decoration: underline;
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
+    white-space: nowrap;
     text-decoration: none;
   }
   &::after {
@@ -13,7 +14,7 @@
     height: 2px;
     background-color: var(--black);
     display: none;
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       display: block;
       height: 3px;
     }

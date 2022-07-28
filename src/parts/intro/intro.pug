@@ -1,11 +1,12 @@
 mixin intro(title, subtitle)
   .intro.section
-    .intro__title.font-bold.tracking-tighter #{title}
-    .lines
-      each val in [1, 2, 3, 4, 5, 6]
-        -var line = 'lines__line lines__line--' + val
-        div(class=line)
-    .intro__description.font-bold.tracking-tighter.flex.items-center.justify-between
-      span.leading-none #{subtitle}
-      span(class="hidden md:block")
-        include ../icons/intro-description-arrow-down.pug
+    .intro__container
+      .intro__title.font-bold.tracking-tighter #{title}
+      .lines
+        each val in [1, 2, 3, 4, 5, 6]
+          -var line = 'lines__line lines__line--' + val
+          div(class=line)
+      .intro__description.font-bold.tracking-tighter.flex.items-center.justify-between
+        span.leading-none #{subtitle}
+        span(class="hidden md:block")
+          include ../icons/intro-description-arrow-down.pug

@@ -1,4 +1,13 @@
 .poster {
+  overflow: hidden;
+  padding: 20px;
+  background-color: var(--color7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: calc(100vh - 70px);
   &__number {
     font-size: 46px;
     @media (min-width: 1024px) {
@@ -6,9 +15,9 @@
     }
   }
   &__title {
-    margin-top: 339px;
+    margin-top: min(50vh, 340px);
     font-size: 34px;
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       margin-top: unset;
       font-size: 60px;
     }

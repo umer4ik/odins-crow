@@ -163,5 +163,5 @@ module.exports = [
   config.googleAnalyticsUA && google,
   webpackBar,
   config.env === 'development' && hmr,
-  config.env === 'development' && tailwindInjectCDN,
+  // config.env === 'development' && tailwindInjectCDN,
 ].filter(Boolean);

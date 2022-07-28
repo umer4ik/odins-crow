@@ -1,5 +1,7 @@
 .time-target {
-  height: 400vh;
+  @media (min-width: 1024px) {
+    height: 400vh;
+  }
 }
 .time-trigger {
   @media (min-width: 1024px) {
@@ -11,13 +13,43 @@
   @apply mt-8;
   @apply md:mt-10;
   @apply md:-mx-2.5;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  justify-content: space-around;
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
+  }
 }
 .time-block {
-  height: calc(100vh - 375px);
-  width: calc(100% - 20px);
-  min-width: calc(100% - 20px);
-  &--3 {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  height: 275px;
+  @media (min-width: 640px) {
     width: calc(50% - 20px);
-    min-width: calc(50% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .has-scroll-init & {
+    @media (min-width: 1024px) {
+      margin-bottom: 0;
+      height: calc(100vh - 375px);
+      width: calc(100% - 20px);
+      min-width: calc(100% - 20px);
+    }
+  }
+  &--3 {
+    .has-scroll-init & {
+      width: calc(33.33% - 20px);
+      @media (min-width: 1024px) {
+        width: calc(50% - 20px);
+        min-width: calc(50% - 20px);
+      }
+    }
   }
 }

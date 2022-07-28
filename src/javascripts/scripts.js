@@ -5,9 +5,21 @@ window.jQuery = $
 window.$ = $
 
 const isHomePage = () => document.body.dataset.page === 'home'
+let scroll = null
 
-$(() => {
-  const scroll = new LocomotiveScroll({
+function destroyScroll() {
+  if (scroll) {
+    scroll.destroy()
+    scroll = null
+    $('.time-block, .structures-block, [data-scroll-section]').removeAttr('style')
+  }
+}
+
+const initScroll = () => {
+  if (scroll) {
+    destroyScroll()
+  }
+  scroll = new LocomotiveScroll({
     el: document.querySelector('#js-scroll'),
     smooth: true,
     tablet: {
@@ -76,7 +88,6 @@ $(() => {
       if (target2 && target2.el) {
         $('.structures-block').css('opacity', 1)
         const { progress } = target2
-        console.log(progress)
         if (progress > 0 && progress < 0.33) {
           $('.structures__text-block--1').addClass('show')
           $('.structures__text-block--2').removeClass('show')
@@ -95,11 +106,21 @@ $(() => {
         $('.structures-block').css('opacity', 0)
       }
     }
-
-    // const progress = instance.scroll.y / instance.limit.y
-    // console.log(progress)
   })
   scroll.on('call', (value, way, object) => {
     console.log(value, way, object)
   })
+}
+
+const init = () => {
+  if ($(window).width() > 1024) {
+    initScroll()
+  } else {
+    destroyScroll()
+  }
+}
+
+$(() => {
+  $(window).on('resize', init)
+  init()
 })

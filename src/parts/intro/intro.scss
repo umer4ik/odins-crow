@@ -1,11 +1,29 @@
 .intro {
-  margin-top: 152px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 90px;
+  padding-bottom: 5vh;
+  height: 50vh;
+  @media (min-width: 640px) {
+    height: 70vh;
+  }
   @media (min-width: 1024px) {
-    margin-top: 213px;
+    height: 100vh;
+  }
+  &__container {
+
   }
   &__title {
     font-size: 46px;
+    @media (min-width: 768px) {
+      font-size: 88px;
+    }
     @media (min-width: 1024px) {
+      font-size: 137px;
+    }
+    @media (min-width: 1280px) {
       font-size: 187px;
     }
   }

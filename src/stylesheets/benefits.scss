@@ -1,4 +1,28 @@
+.benefits {
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+  @media (min-width: 640px) {
+    justify-content: space-around;
+  }
+}
 .benefit {
+  width: 100%;
+  margin-top: 50px;
+  &:first-child {
+    margin-top: 30px;
+    @media (min-width: 640px) {
+      margin-top: 40px;
+    }
+  }
+  @media (min-width: 640px) {
+    margin-top: 40px;
+    width: calc(50% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  @media (min-width: 1024px) {
+    width: calc(33.33% - 20px);
+  }
   &__advantages {
     @media (min-width: 768px) {
       background-image:

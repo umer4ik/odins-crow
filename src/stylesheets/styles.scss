@@ -10,9 +10,11 @@
 @import "gentle-underline.scss";
 @import "helpers.scss";
 @import "../parts/section/section.scss";
-@import "benefit.scss";
 @import "time.scss";
 @import "structures.scss";
+@import "what-we-do.scss";
+@import "pain.scss";
+@import "benefits.scss";
 /* stylelint-disable scss/at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
