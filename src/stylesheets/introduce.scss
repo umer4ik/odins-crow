@@ -1,0 +1,30 @@
+.introduce {
+  margin-top: 80px;
+  @media (min-width: 1024px) {
+    margin-top: 160px;
+  }
+  /* stylelint-disable-next-line selector-class-pattern */
+  .section-title__title {
+    @media (min-width: 1024px) {
+      white-space: normal;
+    }
+    @media (min-width: 1280px) {
+      white-space: pre;
+    }
+  }
+  &__text {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    @media (min-width: 640px) {
+      text-align: left;
+    }
+    @media (min-width: 1024px) {
+      min-width: 315px;
+      max-width: 315px;
+      margin-right: 20px;
+      font-size: 36px;
+      line-height: 39px;
+    }
+  }
+}

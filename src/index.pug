@@ -6,28 +6,30 @@ html(lang="en")
     include parts/header/header.pug
     div(id="js-scroll" data-scroll-container class="main-container")
       div(data-scroll-section)
+        include parts/intro/intro.pug
+        +intro('Odin’s Crow', 'We work fast and keep it easy', 'SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '©2022')
+      div(data-scroll-section)
+        include parts/poster/poster-home.pug
+      div(data-scroll-section)
+        include parts/home-blocks/1.1.pug
+      div(data-scroll-section)
+        include parts/home-blocks/1.2.pug
+      div(data-scroll-section)
+        include parts/home-blocks/1.3.pug
+      div(data-scroll-section id="time-target" class="time-target")
+        include parts/home-blocks/1.4.pug
+      div(data-scroll-section id="structures-target" class="structures-target")
+        include parts/home-blocks/1.4.2.pug
+      div(data-scroll-section)
+        include parts/home-blocks/1.5.pug
+      div(data-scroll-section)
+        include parts/home-blocks/1.6.pug
+      div(data-scroll-section)
+        include parts/home-blocks/away.pug
+      div(data-scroll-section)
         include parts/get-in-touch/get-in-touch.pug
-      //- div(data-scroll-section)
-      //-   include parts/intro/intro.pug
-      //-   +intro('Odin’s Crow', 'We work fast and keep it easy')
-      //- div(data-scroll-section)
-      //-   include parts/poster/poster-home.pug
-      //- div(data-scroll-section)
-      //-   include parts/home-blocks/1.1.pug
-      //- div(data-scroll-section)
-      //-   include parts/home-blocks/1.2.pug
-      //- div(data-scroll-section)
-      //-   include parts/home-blocks/1.3.pug
-      //- div(data-scroll-section id="time-target" class="time-target")
-      //-   include parts/home-blocks/1.4.pug
-      //- div(data-scroll-section id="structures-target" class="structures-target")
-      //-   include parts/home-blocks/1.4.2.pug
-      //- div(data-scroll-section)
-      //-   include parts/home-blocks/1.5.pug
-      //- div(data-scroll-section)
-      //-   include parts/home-blocks/1.6.pug
-      //- div(data-scroll-section)
-      //-   include parts/home-blocks/away.pug
-      //- div(data-scroll-section style="height: 100vh")
-      //- div(data-scroll-section)
-      //-   include parts/footer/footer.pug
+      div(data-scroll-section)
+        include parts/home-blocks/1.7.pug
+      div(data-scroll-section style="height: 100vh")
+      div(data-scroll-section)
+        include parts/footer/footer.pug

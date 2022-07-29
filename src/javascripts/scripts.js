@@ -123,5 +123,5 @@ const init = (skipScroll) => {
 
 $(() => {
   $(window).on('resize', init)
-  init(true)
+  init()
 })

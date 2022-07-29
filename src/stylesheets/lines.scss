@@ -1,0 +1,57 @@
+/* stylelint-disable selector-class-pattern */
+.lines {
+  position: relative;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  &--reverse {
+    flex-direction: column-reverse;
+    .lines__line {
+      margin-top: 0;
+    }
+  }
+  &__line {
+    width: 100%;
+    background-color: var(--black);
+    &--1 {
+      margin-top: 0;
+      height: 1px;
+    }
+    &--2 {
+      margin-top: 18px;
+      height: 2px;
+      .lines--reverse & {
+        margin-bottom: 18px;
+      }
+    }
+    &--3 {
+      margin-top: 16px;
+      height: 4px;
+      .lines--reverse & {
+        margin-bottom: 16px;
+      }
+    }
+    &--4 {
+      margin-top: 14px;
+      height: 6px;
+      .lines--reverse & {
+        margin-bottom: 14px;
+      }
+    }
+    &--5 {
+      margin-top: 12px;
+      height: 8px;
+      .lines--reverse & {
+        margin-bottom: 12px;
+      }
+    }
+    &--6 {
+      margin-top: 10px;
+      height: 10px;
+      .lines--reverse & {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

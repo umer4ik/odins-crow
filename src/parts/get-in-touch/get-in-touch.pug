@@ -8,17 +8,26 @@
       .get-in-touch__title
         span If you’re not sure whether your company fits our focus, send it our way and we’ll let you know within 24 hours
       .get-in-touch__btns
-        a(class="get-in-touch__btn btn-link btn-link--inverse flex items-center justify-between md:text-xl text-base relative overflow-hidden" href="#")
+        a(class="get-in-touch__btn btn-link btn-link--inverse flex items-center justify-between md:text-xl text-base relative overflow-hidden" href="mailto:info@obys.agency")
           span(class="btn-link__left flex items-center")
             span.mt-1 
               include ../icons/envelope.pug
             span(class="ml-4 leading-none") Email us
           span(class="btn-link__right")
             include ../icons/arrow-right.pug
-        a(class="get-in-touch__btn btn-link btn-link--inverse flex items-center justify-between md:text-xl text-base relative overflow-hidden" href="#")
+        a(class="get-in-touch__btn btn-link btn-link--inverse flex items-center justify-between md:text-xl text-base relative overflow-hidden" href="tel:+14048271500")
           span(class="btn-link__left flex items-center")
             span.mt-1 
               include ../icons/phone.pug
             span(class="ml-4 leading-none") Call us
           span(class="btn-link__right")
             include ../icons/arrow-right.pug
+  div(class="lines lines--reverse mt-2.5")
+    .uppercase.flex.justify-between.items-center.mt-auto.bottom-0.left-0.absolute.text-xxs.w-full.h-5
+      span ODIN'S CROW LTD.
+      span(class="hidden md:flex ml-auto justify-between w-1/3 pl-2.5")
+        span(class="hidden md:block") We work fast and keep it easy
+        span © 2022
+    each val in [1, 2, 3, 4, 5, 6]
+      -var line = 'lines__line lines__line--' + val
+      div(class=line)

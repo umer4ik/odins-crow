@@ -1,0 +1,18 @@
+include ../section/section.pug
+include ../poster/poster-footer.pug
+.introduce
+  .section
+    +sectionTitle('Know a great\ncompany we should talk to?', '1.7')
+  .section
+    div(class="bg-color5 relative p-5 md:p-0 color-block color-block--740 md:mt-10 mt-8 section-text flex flex-col md:flex-row md:justify-between md:items-center ")
+      img(src=require("/images/1_page/1.7_img.png"), alt="", class="mix-blend-multiply flex-shrink md:mt-0 mt-12 section-text__image section-text__image--1-7")
+      div(class="section-text__text md:m-0 mt-10 md:text-xl text-base flex-grow")
+        p(class="introduce__text") Introduce us and we’ll get you in to a brand new Tesla model 3
+        a(class="btn-link flex items-center justify-between md:text-xl text-base relative overflow-hidden md:mt-14 md:mb-8 mb-32 mt-12" href="/referral-partners.html")
+          span(class="btn-link__left flex items-center")
+            span.mt-1 
+              include ../icons/folder.pug
+            span(class="ml-4 leading-none") Send us a lead
+          span(class="btn-link__right")
+            include ../icons/arrow-right.pug
+      +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '1.7')

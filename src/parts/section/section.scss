@@ -17,7 +17,8 @@
   &__number {
     display: none;
     @media (min-width: 768px) {
-      width: 33.33%;
+      max-width: 33.33%;
+      min-width: 33.33%;
       display: block;
     }
   }
@@ -31,6 +32,11 @@
   }
   &__image {
     &--1-2 {
+      @media (min-width: 768px) {
+        width: 66.66%;
+      }
+    }
+    &--1-7 {
       @media (min-width: 768px) {
         width: 66.66%;
       }

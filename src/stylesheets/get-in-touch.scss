@@ -7,9 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (min-width: 768px) {
-    margin-top: 160px;
-  }
   &__tag {
     display: flex;
     position: absolute;
