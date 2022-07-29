@@ -1,7 +1,7 @@
 mixin intro(title, subtitle)
   .intro.section
     .intro__container
-      .intro__title.font-bold.tracking-tighter #{title}
+      .intro__title #{title}
       .lines
         each val in [1, 2, 3, 4, 5, 6]
           -var line = 'lines__line lines__line--' + val

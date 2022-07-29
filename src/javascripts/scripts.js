@@ -112,7 +112,8 @@ const initScroll = () => {
   })
 }
 
-const init = () => {
+const init = (skipScroll) => {
+  if (skipScroll) return
   if ($(window).width() > 1024) {
     initScroll()
   } else {

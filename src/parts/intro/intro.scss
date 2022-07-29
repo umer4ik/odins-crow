@@ -12,10 +12,15 @@
   @media (min-width: 1024px) {
     height: 100vh;
   }
+  &--no-fixed-height {
+    height: auto;
+  }
   &__container {
 
   }
   &__title {
+    @apply tracking-tighter;
+    font-weight: 700;
     font-size: 46px;
     @media (min-width: 768px) {
       font-size: 88px;

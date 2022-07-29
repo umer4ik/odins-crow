@@ -1,0 +1,32 @@
+div(class="section md:mt-44 mt-20")
+  .bg-color3.p-5
+    .away.intro.intro--no-fixed-height.pb-0
+      .intro__container
+        .intro__title We stay away!
+        .lines
+          each val in [1, 2, 3, 4, 5, 6]
+            -var line = 'lines__line lines__line--' + val
+            div(class=line)
+        .intro__description.font-bold.tracking-tighter.flex.items-center.justify-between
+          span.leading-none We generally stay away from companies that are:
+          span(class="hidden md:block")
+            include ../icons/intro-description-arrow-down.pug
+      .away__blocks
+        .away__block.away__block--left
+          .away__block-title
+            | Resource or
+            br
+            | commodity based
+          .away__block-description
+            span(class="md:mr-2 mb-1 md:mb-0")
+              include ../icons/sad.pug
+            span Gold, oil, or other resource based companies make us nervous
+        .away__block.away__block--right
+          .away__block-title
+            | Turnaround
+            br
+            | opportunities
+          .away__block-description
+            span(class="md:mr-2 mb-1 md:mb-0")
+              include ../icons/sad.pug
+            span We just aren’t good at this
