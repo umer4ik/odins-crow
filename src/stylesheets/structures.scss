@@ -1,7 +1,13 @@
 .structures-target {
-  display: none;
-  height: 300vh;
   @media (min-width: 1024px) {
+    height: 500vh;
+    display: block;
+  }
+}
+.structures-trigger {
+  display: none;
+  @media (min-width: 1024px) {
+    padding-bottom: 160px;
     display: block;
   }
 }
@@ -63,4 +69,12 @@
       height: 3em;
     }
   }
+}
+.structures-mobile-video {
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 13%;
+  left: 17%;
+  width: 100%;
+  transform: scale(1.2);
 }

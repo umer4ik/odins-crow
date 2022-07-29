@@ -1,52 +1,57 @@
 include ../section/section.pug
-include ../poster/poster-footer.pug
-div(data-scroll data-scroll-offset="-170" data-scroll-sticky data-scroll-target="#structures-target" class="structures-trigger")
-  .section
-    div(class="time-blocks flex")
-      div(class="bg-color5 relative flex items-center justify-center md:mx-2.5 structures-block")
-        .absolute.bottom-5.left-5
-          include ../icons/number-1.pug
+.section.we-buy
+  +sectionTitle('We like to buy\nCompanies that have:', '1.5')
+  .we-buy__box
+    div(class="we-buy__item md:mt-5 mt-7")
+      img(src=require('/images/1_page/1.5_img.png'))
+    div(class="we-buy__lines sm:text-xl text-base mt-4")
+      .we-buy__line-block 
+        .we-buy__line-block-item
+          .font-bold.tracking-tight.flex
+            span(class="w-1/4") (A)
+            p Retiring entrepreneurs
+        .we-buy__line-block-item
+          p A clear path to growth
+      .we-buy__line-block 
+        .we-buy__line-block-item
+          .font-bold.tracking-tight.flex
+            span(class="w-1/4") (B)
+            p A unique advantage
+        .we-buy__line-block-item
+          p Reputation, trade secrets or niche.
+      .we-buy__line-block 
+        .we-buy__line-block-item
+          .font-bold.tracking-tight.flex
+            span(class="w-1/4") (C)
+            p A simple business model
+        .we-buy__line-block-item
+          p You can explain the business to your grand parents.
+      .we-buy__line-block 
+        .we-buy__line-block-item
+          .font-bold.tracking-tight.flex
+            span(class="w-1/4") (D)
+            p Profitable
+        .we-buy__line-block-item
+          p $1-$3M in net income.
+      .we-buy__line-block 
+        .we-buy__line-block-item
+          .font-bold.tracking-tight.flex
+            span(class="w-1/4") (E)
+            p Successful operations
+        .we-buy__line-block-item
+          p Of 5 years or longer.
+      .we-buy__line-block 
+        .we-buy__line-block-item
+          .font-bold.tracking-tight.flex
+            span(class="w-1/4") (F)
+            p A high-quality team
+        .we-buy__line-block-item
+          p Great culture and people.
+      .we-buy__line-block 
+        .we-buy__line-block-item
+          .font-bold.tracking-tight.flex
+            span(class="w-1/4") (G)
+            p A need for digital
+        .we-buy__line-block-item
+          p Traditional companies that need some tech help.
       
-      div(class="bg-color5 relative flex items-center justify-center md:mx-2.5 structures-block")
-        .absolute.bottom-5.left-5
-          include ../icons/number-2.pug
-
-      div(class="bg-color4 relative flex items-center justify-center md:mx-2.5 structures-block")
-        .absolute.bottom-5.left-5
-          include ../icons/number-3.pug
-    
-    div(class="bg-color3 structures__main relative p-5 flex items-center section-text justify-end")
-      div(class="structures__numbers absolute top-2 left-4 xs:-top-5 xs:left-1 font-bold leading-none")
-        .structures__numbers-box 
-          .structures__number 1
-          .structures__number 2
-          .structures__number 3
-      video(
-        src=require("/images/1_page/1-4_video_Small.mp4")
-        autoplay
-        loop
-        muted
-        class="mix-blend-multiply structures__video"
-      )
-      .structures__text
-        .structures__text-block.structures__text-block--1.show
-          span.gentle-underline 15-day
-          br
-          span.gentle-underline diligence
-          br
-          span.gentle-underline process
-          br
-          span.gentle-underline focused on
-          br
-          span.gentle-underline what matters
-        .structures__text-block.structures__text-block--2 
-          span.gentle-underline Straight
-          br
-          span.gentle-underline forward deal
-          br
-          span.gentle-underline structures
-        .structures__text-block.structures__text-block--3 
-          span.gentle-underline Owners can
-          br
-          span.gentle-underline stay or go
-      +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '1.4')

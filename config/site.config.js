@@ -30,7 +30,7 @@ const config = {
   dev_host: 'localhost',
 
   // Local development port
-  port: process.env.PORT || 8000,
+  port: process.env.PORT || 8002,
 
   // Advanced configuration, edit with caution!
   env: process.env.NODE_ENV,

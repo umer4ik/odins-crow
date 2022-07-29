@@ -14,11 +14,11 @@
   @apply md:mt-10;
   @apply md:-mx-2.5;
   flex-wrap: wrap;
-  margin-left: -10px;
-  margin-right: -10px;
   justify-content: space-around;
   @media (min-width: 768px) {
     flex-wrap: nowrap;
+    margin-left: -10px;
+    margin-right: -10px;
   }
   @media (min-width: 1024px) {
     justify-content: flex-start;
@@ -49,6 +49,14 @@
       @media (min-width: 1024px) {
         width: calc(50% - 20px);
         min-width: calc(50% - 20px);
+      }
+    }
+  }
+  #ellipse {
+    svg {
+      width: 170px;
+      @media (min-width: 1024px) {
+        width: unset;
       }
     }
   }

@@ -108,21 +108,21 @@
     }
   }
   &__left {
-    transform: translate(15px, 0);
+    transform: translate(25px, 0);
     @media (min-width: 768px) {
       transform: none;
     }
     .btn-link:hover & {
-      transform: translate(15px, 0);
+      transform: translate(25px, 0);
     }
   }
   &__right {
-    transform: translate(-15px, 0);
+    transform: translate(-25px, 0);
     @media (min-width: 768px) {
       transform: none;
     }
     .btn-link:hover & {
-      transform: translate(-15px, 0);
+      transform: translate(-25px, 0);
     }
   }
 }

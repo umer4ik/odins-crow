@@ -9,6 +9,10 @@
   }
   &__title {
     max-width: 700px;
+    white-space: pre;
+    @media (max-width: 500px) {
+      white-space: normal;
+    }
   }
   &__number {
     display: none;
