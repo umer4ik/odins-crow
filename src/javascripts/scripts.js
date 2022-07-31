@@ -112,7 +112,18 @@ const initScroll = () => {
   })
 }
 
+const initNewsletterForm = () => {
+  $('#newsletter-email-input').on('input', (e) => {
+    if (e.target.value) {
+      $('#newsletter-email-label').addClass('hide')
+    } else {
+      $('#newsletter-email-label').removeClass('hide')
+    }
+  })
+}
+
 const init = (skipScroll) => {
+  initNewsletterForm()
   if (skipScroll) return
   if ($(window).width() > 1024) {
     initScroll()

@@ -1,1 +1,42 @@
-footer.footer.h-80
+include ../helpers.pug
+footer.footer
+  .footer__marque
+    .footer__marque-text
+      span Odin’s Crow&nbsp;–&nbsp;
+      span Odin’s Crow&nbsp;–&nbsp;
+      span Odin’s Crow&nbsp;–&nbsp;
+  .section.footer__section
+    .footer__row
+      .footer__col
+        .newsletter
+          form.newsletter-form
+            .newsletter-form__control 
+              input(type="email" name="email" id="newsletter-email-input" required).newsletter-form__input
+              label(for="email-input" id="newsletter-email-label").newsletter-form__label Email Newsletter&hellip;
+              button(type="submit").newsletter-form__btn
+                span.newsletter-form__btn-arrow.newsletter-form__btn-arrow--top
+                  include ../icons/arrow-right.pug
+                span.newsletter-form__btn-arrow.newsletter-form__btn-arrow--bottom 
+                  include ../icons/arrow-right.pug
+            .newsletter-form__hint
+              | Sign up for a monthly digest of what we're thinking, learning, and looking to do next.
+        a(href="mailto:info@obys.agency", class="footer__contacts-link link-underlined link-underlined--fat")
+          div.mt-1
+            include ../icons/envelope-big.pug
+          span.ml-4 Get in touch
+      
+      .footer__col
+        .footer__links.footer__links--site 
+          +flipLink('Home', '/')
+          +flipLink('About', '/about.html')
+          +flipLink('Referral partners', '/referral-partners.html')
+        .footer__links.footer__links--social
+          div(class="text-xxs mb-5") SOCIAL NETWORKS: 
+          +flipLink('Twitter', 'https://twitter.com/')
+          +flipLink('LinkedIn', 'https://www.linkedin.com/')
+        div(class="md:hidden block bg-color5 mt-12")
+          include ../contact-btn/contact-btn.pug
+        div(class="text-xxs flex justify-between uppercase mt-5 md:mt-auto")
+          span © 2022 Odin's Crow
+          span Website by <a href="https://obys.agency/" target="_blank" class="underline md:no-underline">Obys</a>
+        

@@ -12,5 +12,6 @@ module.exports = {
     "number-leading-zero": null,
     "at-rule-empty-line-before": null,
     "color-hex-case": null,
+    "selector-class-pattern": null
   },
 }

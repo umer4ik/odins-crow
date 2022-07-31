@@ -1,0 +1,26 @@
+.contact-btn {
+  padding-top: 15px;
+  padding-bottom: 22px;
+  display: block;
+  font-size: 34px;
+  &__box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon {
+    margin-right: 8px;
+    margin-top: 8px;
+    svg {
+      width: 33.85px;
+      height: 32.16px;
+    }
+  }
+  &__text {
+    letter-spacing: -0.05em;
+    text-decoration: underline;
+    font-weight: 700;
+    line-height: 1;
+  }
+}
