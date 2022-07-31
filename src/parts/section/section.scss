@@ -4,6 +4,7 @@
 }
 .section-title {
   font-size: 34px;
+  border-bottom: 1px solid rgba(var(--black-rgb) / 80%);
   @media (min-width: 1024px) {
     font-size: 60px;
   }

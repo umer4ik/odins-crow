@@ -1,0 +1,68 @@
+include ../section/section.pug
+mixin masks()
+  .mate__avatar-mask.mate__avatar-mask--noise
+  .mate__avatar-mask.mate__avatar-mask--1
+  .mate__avatar-mask.mate__avatar-mask--2
+.team.section 
+  +sectionTitle('Our Team', '2.4')
+  ul.team__mates
+    li.mate
+      .mate__box
+        .mate__avatar
+          +masks()
+          img(src=require("/images/2_page/mate-1.png"))
+        .mate__name Cody Sorensen
+        .mate__status 
+          span.mate__status-icon
+            include ../icons/happy.pug
+          span Partner
+    li.mate
+      .mate__box
+        .mate__avatar 
+          +masks()
+          img(src=require("/images/2_page/mate-2.png"))
+        .mate__name Trevor Szutu
+        .mate__status 
+          span.mate__status-icon
+            include ../icons/happy.pug
+          span Partner
+    li.mate
+      .mate__box
+        .mate__avatar 
+          +masks()
+          img(src=require("/images/2_page/mate-3.png"))
+        .mate__name Ross Gilchrest
+        .mate__status 
+          span.mate__status-icon
+            include ../icons/happy.pug
+          span Partner
+    li.mate
+      .mate__box
+        .mate__avatar 
+          +masks()
+          img(src=require("/images/2_page/mate-4.png"))
+        .mate__name Mike Blattman
+        .mate__status 
+          span.mate__status-icon
+            include ../icons/happy.pug
+          span Partner
+    li.mate
+      .mate__box
+        .mate__avatar 
+          +masks()
+          img(src=require("/images/2_page/mate-5.png"))
+        .mate__name Paul Tellier
+        .mate__status 
+          span.mate__status-icon
+            include ../icons/happy.pug
+          span Advisor
+    li.mate
+      .mate__box
+        .mate__avatar 
+          +masks()
+          img(src=require("/images/2_page/mate-6.png"))
+        .mate__name Hugo Sorensen
+        .mate__status 
+          span.mate__status-icon
+            include ../icons/happy.pug
+          span Advisor

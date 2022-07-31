@@ -1,0 +1,18 @@
+.how-we-approach {
+  margin-top: 20px;
+  &__box {
+    padding-top: 73px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgba(var(--color3-rgb) / 70%);
+    @media (min-width: 768px) {
+      padding-top: 168px;
+    }
+  }
+  .section-title {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

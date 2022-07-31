@@ -2,9 +2,21 @@ doctype html
 html(lang="en")
   include parts/head/head.pug
   +head('About')
-  body
+  body(data-page="about")
     include parts/header/header.pug
-    include parts/intro/intro.pug
-    +intro('About us', 'We\'ve seen deals from every perspective', 'SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '© 2022')
-    include parts/poster/poster-about.pug
-    include parts/footer/footer.pug
+    div(id="js-scroll" data-scroll-container class="main-container")
+      div(data-scroll-section)
+        include parts/intro/intro.pug
+        +intro('About us', 'We\'ve seen deals from every perspective', 'SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '© 2022')
+      div(data-scroll-section)
+        include parts/poster/poster-about.pug
+      div(data-scroll-section)
+        include parts/about-blocks/our-experience.pug
+      div(data-scroll-section)
+        include parts/about-blocks/our-approach.pug
+      div(data-scroll-section)
+        include parts/about-blocks/how-we-approach.pug
+      div(data-scroll-section)
+        include parts/about-blocks/team.pug
+      div(data-scroll-section)
+        include parts/footer/footer.pug

@@ -1,0 +1,103 @@
+.team {
+  margin-top: 80px;
+  @media (min-width: 1024px) {
+    margin-top: 160px;
+  }
+  &__mates {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+  }
+  .section-title__number {
+    @media (min-width: 768px) {
+      max-width: calc(33.33% - 10px);
+      min-width: calc(33.33% - 10px);
+    }
+  }
+}
+.mate {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 40px;
+  width: 100%;
+  @media (min-width: 640px) {
+    width: 50%;
+  }
+  @media (min-width: 768px) {
+    width: 33.3333%;
+  }
+  &__avatar {
+    position: relative;
+    img {
+      position: relative;
+      width: 100%;
+      object-fit: cover;
+      z-index: 2;
+    }
+  }
+  &__avatar-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+  }
+  &__avatar-mask--1 {
+    z-index: 3;
+    mix-blend-mode: hard-light;
+  }
+  &__avatar-mask--2 {
+    z-index: 1;
+  }
+  &__avatar-mask--noise {
+    z-index: 4;
+    background: url("/images/2_page/noise.png");
+  }
+  &:nth-child(2n + 1) {
+    .mate__avatar-mask--1 {
+      background: var(--color4);
+    }
+    .mate__avatar-mask--2 {
+      background: var(--color5);
+    }
+  }
+  &:nth-child(2n) {
+    .mate__avatar-mask--1 {
+      background: #84796C;
+    }
+    .mate__avatar-mask--2 {
+      background: var(--color5);
+    }
+  }
+  &__name {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    @media (min-width: 1024px) {
+      margin-top: 12px;
+      font-size: 36px;
+      line-height: 39px;
+      letter-spacing: -0.05em;
+    }
+  }
+  &__status {
+    border-top: 1px solid rgba(var(--black-rgb) / 80%);
+    border-bottom: 1px solid rgba(var(--black-rgb) / 80%);
+    display: flex;
+    align-items: center;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    padding-top: 3px;
+    padding-bottom: 6px;
+    margin-top: 15px;
+    @media (min-width: 768px) {
+      padding-top: 4px;
+      padding-bottom: 8px;
+      margin-top: 19px;
+      font-size: 20px;
+    }
+  }
+  &__status-icon {
+    margin-right: 5px;
+  }
+}
