@@ -1,6 +1,12 @@
 .section {
   padding-left: 20px;
   padding-right: 20px;
+  &--top-gap {
+    margin-top: 80px;
+    @media (min-width: 1024px) {
+      margin-top: 160px;
+    }
+  }
 }
 .section-title {
   font-size: 34px;

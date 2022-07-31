@@ -122,8 +122,41 @@ const initNewsletterForm = () => {
   })
 }
 
+const initJoinForm = () => {
+  const requiredFields = [
+    'fullName',
+    'phone',
+    'email',
+    'streetAddress',
+    'city',
+    'country',
+    'zipCode',
+    'agreement',
+  ]
+  $('#join-form').on('submit', (e) => {
+    e.preventDefault()
+    $('#join-form input').each((_, el) => {
+      if ((!el.value || !el.checked) && requiredFields.includes(el.name)) {
+        $(el).addClass('error')
+      }
+    })
+  })
+  const onInputChange = (e) => {
+    if (requiredFields.includes(e.currentTarget.name)) {
+      if (e.currentTarget.value) {
+        $(e.currentTarget).removeClass('error')
+      } else {
+        $(e.currentTarget).addClass('error')
+      }
+    }
+  }
+  $('#join-form input').on('input', onInputChange)
+  $('#join-form input').on('change', onInputChange)
+}
+
 const init = (skipScroll) => {
   initNewsletterForm()
+  initJoinForm()
   if (skipScroll) return
   if ($(window).width() > 1024) {
     initScroll()

@@ -1,0 +1,63 @@
+include ../section/section.pug
+.section.join.section--top-gap
+  +sectionTitle('Join our\nreferral network', '3.2')
+  .join__box 
+    .join__img-box 
+      img(class="join__img" src=require("/images/3_page/3.2_img.png"))
+    form#join-form.join__form
+      .join__form-row 
+        .join__form-col
+          .join__form-control 
+            label.join__label Full name*
+            input(class="join__input" type="text" name="fullName")
+        .join__form-col
+          .join__form-control 
+            label.join__label Phone*
+            input(class="join__input" type="tel" name="phone")
+      .join__form-row 
+        .join__form-col
+          .join__form-control 
+            label.join__label Email address*
+            input(class="join__input" type="email" name="email")
+        .join__form-col
+          .join__form-control 
+            label.join__label Street Address*
+            input(class="join__input" type="text" name="streetAddress")
+      .join__form-row 
+        .join__form-col
+          .join__form-control 
+            label.join__label City*
+            input(class="join__input" type="text" name="city")
+        .join__form-col
+          .join__form-control 
+            label.join__label Country*
+            input(class="join__input" type="text" name="country")
+      .join__form-row 
+        .join__form-col
+          .join__form-control 
+            label.join__label State / Province / Count
+            input(class="join__input" type="text" name="stateProvinceCount")
+        .join__form-col
+          .join__form-control 
+            label.join__label ZIP Code*
+            input(class="join__input" type="text" name="zipCode")
+      .join__form-row 
+        .join__form-col
+          .join__form-control 
+            label.join__label Message
+            textarea(class="join__input join__input--textarea" name="Message")
+      .join__form-row.join__form-row--submit
+        .join__form-col
+          .join__form-checkbox-box
+            input(class="join__form-checkbox-input" type="checkbox" name="agreement" id="agreement")
+            label(for="agreement").join__form-checkbox-label
+              span I agree with the#{' '}<a href="#">Privacy Policy and Terms</a>
+        .join__form-col
+          button(type="submit" class="join__form-submit-btn btn-link btn-link--hovered btn-link--lg flex items-center justify-between md:text-xl text-base relative overflow-hidden")
+            span(class="btn-link__left flex items-center")
+              span.mt-1 
+                include ../icons/envelope.pug
+              span(class="ml-4 leading-none") Submit your application
+            span(class="btn-link__right")
+              include ../icons/arrow-right.pug
+              

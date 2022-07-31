@@ -79,8 +79,15 @@
   @media (min-width: 768px) {
     color: inherit;
   }
-  &:hover {
+  &:hover,
+  &--hovered {
     color: var(--white);
+  }
+  &--lg {
+    height: 70px;
+    @media (min-width: 768px) {
+      height: 80px;
+    }
   }
   &::after {
     z-index: 1;
@@ -108,7 +115,8 @@
       background-color: var(--white);
     }
   }
-  &:hover::after {
+  &:hover::after,
+  &--hovered::after {
     transform: translate(0, 0);
   }
   &__left,
@@ -124,7 +132,8 @@
     @media (min-width: 768px) {
       transform: none;
     }
-    .btn-link:hover & {
+    .btn-link:hover &,
+    .btn-link--hovered & {
       transform: translate(25px, 0);
     }
   }
@@ -133,7 +142,8 @@
     @media (min-width: 768px) {
       transform: none;
     }
-    .btn-link:hover & {
+    .btn-link:hover &,
+    .btn-link--hovered & {
       transform: translate(-25px, 0);
     }
   }
