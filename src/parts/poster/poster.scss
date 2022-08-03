@@ -21,6 +21,11 @@
       margin-top: unset;
       font-size: 60px;
     }
+    .gentle-underline {
+      @media (max-width: 1024px) {
+        white-space: normal;
+      }
+    }
   }
   &--color7 {
     background-color: var(--color7);

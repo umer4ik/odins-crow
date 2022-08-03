@@ -1,4 +1,99 @@
 include ../section/section.pug
-.section.section--top-gap
+include ../poster/poster-footer.pug
+div(data-scroll data-scroll-offset="-170" data-scroll-sticky data-scroll-target="#how-it-works-target" class="how-it-works-trigger")
+  .section.section--top-gap.how-it-works
+    +sectionTitle('How it works', '3.1')
+    .how-it-works__blocks
+      .bg-color3.how-it-works__block.how-it-works__block--1
+        .absolute.flex.items-center.top-5.left-5
+          span.mr-3
+            include ../icons/number-1.pug
+        img(src=require("/images/3_Page/3.1_img_1.png")).how-it-works__img
+        .how-it-works__text
+          .how-it-works__text-block
+            .how-it-works__text-title.gentle-underline Review
+            .how-it-works__text-title.gentle-underline Terms
+            .how-it-works__text-content Take a look at our referral agreement. We’ll send over an executed copy prior to any introductions being made. 
+        +posterFooter('We work fast and keep it easy', '3.1')
+      .bg-color8.how-it-works__block.how-it-works__block--2
+        .absolute.flex.items-center.top-5.left-5
+          span.mr-3
+            include ../icons/number-2.pug
+        img(src=require("/images/3_Page/3.1_img_2.png")).how-it-works__img
+        .how-it-works__text
+          .how-it-works__text-block
+            .how-it-works__text-title.gentle-underline Get
+            br
+            .how-it-works__text-title.gentle-underline Started
+            .how-it-works__text-content Once you have signed up as a referral partner, please send us an email with the companies that you have in mind. Prior to you reaching out, we need to ensure we haven’t already been in contact with the company.
+        +posterFooter('We work fast and keep it easy', '3.1')
+      .bg-color5.how-it-works__block.how-it-works__block--3
+        .absolute.flex.items-center.top-5.left-5
+          span.mr-3
+            include ../icons/number-3.pug
+        img(src=require("/images/3_Page/3.1_img_3.png")).how-it-works__img
+        .how-it-works__text
+          .how-it-works__text-block
+            .how-it-works__text-title.gentle-underline We’ll
+            .how-it-works__text-title.gentle-underline get rolling
+            .how-it-works__text-content If it looks like a fit, we’ll let you know so you can introduce us to the decision makers to work towards a deal. 
+        +posterFooter('We work fast and keep it easy', '3.1')
+      .bg-color6.how-it-works__block.how-it-works__block--4
+        .absolute.flex.items-center.top-5.left-5
+          span.mr-3
+            include ../icons/number-4.pug
+        img(src=require("/images/3_Page/3.1_img_4.png")).how-it-works__img
+        .how-it-works__text
+          .how-it-works__text-block
+            .how-it-works__text-title.gentle-underline Success
+            .how-it-works__text-content If we close, once signatures are on paper we will be in touch and your tesla will be ordered. 
+        +posterFooter('We work fast and keep it easy', '3.1')
+div(class="section block lg:hidden section--top-gap")
   +sectionTitle('How it works', '3.1')
-  h1 TODO
+  .relative.mt-5.bg-color3.p-5
+    .absolute.flex.items-center.top-5.left-5
+      span.mr-3
+        include ../icons/number-1.pug
+    img(
+      src=require("/images/3_Page/3.1_img_1.png")
+      class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
+    div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
+      span.gentle-underline Review Terms
+    p.mt-5.mb-32 Take a look at our referral agreement. We’ll send over an executed copy prior to any introductions being made. 
+    +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', 'Intro')
+  
+  .relative.mt-5.bg-color8.p-5
+    .absolute.flex.items-center.top-5.left-5
+      span.mr-3
+        include ../icons/number-2.pug
+    img(
+      src=require("/images/3_Page/3.1_img_2.png")
+      class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
+    div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
+      span.gentle-underline Get Started
+    p.mt-5.mb-32 Once you have signed up as a referral partner, please send us an email with the companies that you have in mind. Prior to you reaching out, we need to ensure we haven’t already been in contact with the company.
+    +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', 'Intro')
+
+  .relative.mt-5.bg-color5.p-5
+    .absolute.flex.items-center.top-5.left-5
+      span.mr-3
+        include ../icons/number-3.pug
+    img(
+      src=require("/images/3_Page/3.1_img_3.png")
+      class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
+    div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
+      span.gentle-underline We’ll get rolling
+    p.mt-5.mb-32 If it looks like a fit, we’ll let you know so you can introduce us to the decision makers to work towards a deal. 
+    +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', 'Intro')
+  
+  .relative.mt-5.bg-color6.p-5
+    .absolute.flex.items-center.top-5.left-5
+      span.mr-3
+        include ../icons/number-4.pug
+    img(
+      src=require("/images/3_Page/3.1_img_3.png")
+      class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
+    div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
+      span.gentle-underline Success
+    p.mt-5.mb-32 If we close, once signatures are on paper we will be in touch and your tesla will be ordered. 
+    +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', 'Intro')

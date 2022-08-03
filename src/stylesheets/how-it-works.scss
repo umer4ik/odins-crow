@@ -1,0 +1,99 @@
+.how-it-works-target {
+  @media (min-width: 1024px) {
+    height: 600vh;
+  }
+}
+.how-it-works-trigger {
+  display: none;
+  @media (min-width: 1024px) {
+    padding-bottom: 160px;
+    display: block;
+  }
+}
+.how-it-works {
+  &__blocks {
+    position: relative;
+    min-height: calc(100vh - 340px);
+    margin-top: 30px;
+    overflow: hidden;
+    @media (min-width: 1024px) {
+      margin-top: 40px;
+    }
+  }
+  &__block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    transform: translate(100%, 0);
+    z-index: 1;
+    &--1 {
+      transform: none;
+    }
+    &--2 {
+      z-index: 2;
+      left: 8.2%;
+      width: 91.8%;
+      .how-it-works__img {
+        min-width: calc(66.66vw - 60px - 8.9325%);
+        width: calc(66.66vw - 60px - 8.9325%);
+        max-width: calc(66.66vw - 60px - 8.9325%);
+      }
+    }
+    &--3 {
+      z-index: 3;
+      left: 16.4%;
+      width: 83.6%;
+      .how-it-works__img {
+        min-width: calc(66.66vw - 60px - 19.6172%);
+        width: calc(66.66vw - 60px - 19.6172%);
+        max-width: calc(66.66vw - 60px - 19.6172%);
+      }
+    }
+    &--4 {
+      z-index: 4;
+      left: 24.6%;
+      width: 75.4%;
+      .how-it-works__img {
+        min-width: calc(66.66vw - 60px - 32.626%);
+        width: calc(66.66vw - 60px - 32.626%);
+        max-width: calc(66.66vw - 60px - 32.626%);
+      }
+    }
+  }
+  &__img {
+    mix-blend-mode: multiply;
+    max-width: calc(66.666vw - 60px);
+    width: calc(66.666vw - 60px);
+    min-width: calc(66.666vw - 60px);
+  }
+  &__text {
+    max-width: calc(33.33vw - 40px);
+    width: calc(33.33vw - 40px);
+    min-width: calc(33.33vw - 40px);
+    margin-left: 20px;
+  }
+  &__text-block {
+    max-width: 323px;
+  }
+  &__text-title {
+    display: inline;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+  &__text-content {
+    max-width: 323px;
+    margin-top: 33px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+.how-it-works-mobile-title {
+  font-size: 34px;
+}
