@@ -1,3 +1,4 @@
+include ../helpers.pug
 header.header.fixed.w-full.top-0.left-0
   .header__inner.flex.h-full.justify-between.items-center
     a(href="/").header__logo-link.font-bold.tracking-tighter Odin’s Crow
@@ -7,3 +8,19 @@ header.header.fixed.w-full.top-0.left-0
     a(href="mailto:info@obys.agency", class="md:flex header__contacts-link link-underlined hidden items-center")
       include ../icons/header-contact-icon.pug
       span.ml-2 Get in touch
+    .header__burger
+      div
+.mobile-menu
+  .mobile-menu__nav
+    a(href="/").mobile-menu__nav-link Home
+    a(href="/").mobile-menu__nav-link About 
+    a(href="/").mobile-menu__nav-link Referral Partners
+  .mobile-menu__social
+    div(class="text-xxs mb-5 tracking-tight") SOCIAL NETWORKS: 
+    +flipLink('Twitter', 'https://twitter.com/')
+    +flipLink('LinkedIn', 'https://www.linkedin.com/')
+  .mobile-menu__get-in-touch
+    div(class="bg-color4")
+      include ../contact-btn/contact-btn.pug
+  .mobile-menu__footer
+    .text-xxs.tracking-tight.uppercase © 2022 Odin's Crow

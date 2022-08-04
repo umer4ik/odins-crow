@@ -1,0 +1,46 @@
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  height: calc(100% - 70px);
+  width: 100%;
+  z-index: 5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transform: translate(0, calc(-100% - 70px));
+  transition: background-color .4s var(--easing), transform .4s var(--easing);
+  background-color: var(--white);
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    height: 55%;
+    justify-content: center;
+  }
+  &__nav-link {
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    text-decoration: underline;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  &__social {
+    height: 20%;
+  }
+  &__get-in-touch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20%;
+  }
+  &__footer {
+    height: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .active + & {
+    transform: translate(0, 0);
+    background-color: var(--color5);
+  }
+}

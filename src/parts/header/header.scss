@@ -2,10 +2,14 @@
   padding: 0 20px;
   height: 70px;
   background-color: var(--white);
-  z-index: 3;
+  z-index: 6;
+  transition: color .4s var(--easing);
   @media (min-width: 768px) {
     height: 64px;
     transition: transform .4s var(--easing);
+  }
+  &.active {
+    background-color: var(--color5);
   }
   &__logo-link {
     font-size: 22px;
@@ -16,6 +20,58 @@
   &.js-hidden {
     @media (min-width: 768px) {
       /* transform: translateY(-100%); */
+    }
+  }
+  &__burger {
+    @media (min-width: 768px) {
+      display: none;
+    }
+    position: relative;
+    z-index: 1;
+    width: 24px;
+    height: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > div {
+      position: relative;
+      flex: none;
+      width: 100%;
+      height: 3px;
+      background: var(--black);
+      transition: all .4s var(--easing);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -8px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: inherit;
+        transition: all .4s var(--easing);
+      }
+      &::after {
+        top: 8px;
+      }
+    }
+    .active & {
+      > div {
+        transform: rotate(135deg);
+        &::before,
+        &::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+        &::after {
+          opacity: 0;
+        }
+      }
     }
   }
 }

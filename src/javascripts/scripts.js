@@ -111,12 +111,15 @@ const initScroll = () => {
       const target1 = instance.currentElements.el0
       if (target1 && target1.el) {
         const { progress } = target1
-        const transform1 = lerp(progress, 4, 0, 100)
-        $('.how-it-works__block--2').css('transform', `translate(${transform1}%, 0)`)
-        const transform2 = lerp(progress - 0.33, 4, 0, 100)
-        $('.how-it-works__block--3').css('transform', `translate(${transform2}%, 0)`)
-        const transform3 = lerp(progress - 0.66, 4, 0, 100)
-        $('.how-it-works__block--4').css('transform', `translate(${transform3}%, 0)`)
+        // const transform1 = lerp(progress, 4, 0, 100)
+        // $('.how-it-works__block--2').css('transform', `translate(${transform1}%, 0)`)
+        // const transform2 = lerp(progress - 0.33, 4, 0, 100)
+        // $('.how-it-works__block--3').css('transform', `translate(${transform2}%, 0)`)
+        // const transform3 = lerp(progress - 0.66, 4, 0, 100)
+        // $('.how-it-works__block--4').css('transform', `translate(${transform3}%, 0)`)
+        $('.how-it-works__block--2').toggleClass('show', progress > 0.25)
+        $('.how-it-works__block--3').toggleClass('show', progress > 0.5)
+        $('.how-it-works__block--4').toggleClass('show', progress > 0.75)
       }
     }
   })
@@ -167,6 +170,17 @@ const initJoinForm = () => {
   $('#join-form input').on('change', onInputChange)
 }
 
+const initBurger = () => {
+  $('.header__burger').on('click', () => {
+    $('.header').toggleClass('active')
+  })
+  $(window).on('resize', () => {
+    if ($(window).width() > 768) {
+      $('.header').removeClass('active')
+    }
+  })
+}
+
 const init = (skipScroll) => {
   initNewsletterForm()
   initJoinForm()
@@ -176,6 +190,7 @@ const init = (skipScroll) => {
   } else {
     destroyScroll()
   }
+  initBurger()
 }
 
 $(() => {

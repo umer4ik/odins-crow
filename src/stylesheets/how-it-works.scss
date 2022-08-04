@@ -36,6 +36,10 @@
       width: 100%;
       padding: 0 20px;
     }
+    transition: transform .8s var(--easing);
+    &.show {
+      transform: none;
+    }
     &--1 {
       transform: none;
     }
