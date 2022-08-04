@@ -31,6 +31,11 @@
     align-items: center;
     transform: translate(100%, 0);
     z-index: 1;
+    &:not(.how-it-works__block--1, .how-it-works__block--4) .poster-footer {
+      left: 0;
+      width: 100%;
+      padding: 0 20px;
+    }
     &--1 {
       transform: none;
     }
@@ -58,6 +63,12 @@
       z-index: 4;
       left: 24.6%;
       width: 75.4%;
+      .poster-footer {
+        width: calc(100% - 20px);
+        padding-right: 0;
+        padding-left: 20px;
+        left: 0;
+      }
       .how-it-works__img {
         min-width: calc(66.66vw - 60px - 32.626%);
         width: calc(66.66vw - 60px - 32.626%);
