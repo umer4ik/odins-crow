@@ -130,7 +130,6 @@ const initScroll = () => {
     if (Object.keys(elements).some((key) => key.startsWith('img'))) {
       Object.values(elements).forEach((x) => !x.el.classList.contains('zoom-out') && x.el.classList.add('zoom-out'))
     }
-    console.log(elements)
     if (elements['away-title']) {
       animateAwayTitle()
     }
