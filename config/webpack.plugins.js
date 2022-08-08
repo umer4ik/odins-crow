@@ -80,7 +80,7 @@ const generateHTMLPlugins = () => glob.sync('./src/*.pug').map((dir) => {
   });
 });
 
-const pugPlugin = new HTMLWebpackPugPlugin()
+// const pugPlugin = new HTMLWebpackPugPlugin()
 
 // Sitemap
 const sitemap = new SitemapPlugin(config.site_url, paths, {
@@ -161,7 +161,6 @@ module.exports = [
   // stylelint,
   cssExtract,
   ...generateHTMLPlugins(),
-  pugPlugin,
   fs.existsSync(config.favicon) && favicons,
   config.env === 'production' && optimizeCss,
   config.env === 'production' && robots,
