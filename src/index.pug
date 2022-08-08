@@ -3,12 +3,13 @@ html(lang="en")
   include parts/head/head.pug
   +head('Odin’s Crow')
   body(data-page="home")
+    include parts/preloader/preloader.pug
     include parts/header/header.pug
     div(id="js-scroll" data-scroll-container class="main-container")
-      div(data-scroll-section)
+      div(data-scroll-section class="intro-wrapper")
         include parts/intro/intro.pug
         +intro('Odin’s Crow', 'We work fast and keep it easy', 'SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '©2022')
-      div(data-scroll-section)
+      div(data-scroll-section id="poster")
         include parts/poster/poster-home.pug
       div(data-scroll-section)
         include parts/home-blocks/1.1.pug

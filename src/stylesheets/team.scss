@@ -28,6 +28,7 @@
   }
   &__avatar {
     position: relative;
+    overflow: hidden;
     img {
       position: relative;
       width: 100%;

@@ -29,6 +29,8 @@
 @import "join.scss";
 @import "how-it-works.scss";
 @import "mobile-menu.scss";
+@import "split-text.scss";
+@import "../parts/preloader/preloader.scss";
 /* stylelint-disable scss/at-rule-no-unknown */
 @tailwind base;
 @tailwind components;

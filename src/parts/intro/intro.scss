@@ -10,19 +10,17 @@
     height: 70vh;
   }
   @media (min-width: 1024px) {
-    height: 100vh;
+    height: max(80vh, 600px);
   }
   &--no-fixed-height {
     height: auto;
   }
-  &__container {
-
-  }
+  &__container {}
   &__title {
-    @apply tracking-tighter;
     font-weight: 700;
     font-size: 46px;
     padding-top: 70px;
+    line-height: 1;
     @media (min-width: 768px) {
       padding-top: 0;
       font-size: 88px;
@@ -36,6 +34,9 @@
     @media (min-width: 1420px) {
       font-size: 187px;
     }
+    .split-text__char-container {
+      margin-right: -0.05em;
+    }
   }
   &__description {
     color: var(--white);
@@ -46,6 +47,9 @@
     @media (min-width: 1024px) {
       font-size: 36px;
       padding: 18px 20px;
+    }
+    svg {
+      cursor: pointer;
     }
   }
 }

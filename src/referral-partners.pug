@@ -3,12 +3,13 @@ html(lang="en")
   include parts/head/head.pug
   +head('Referral Partners')
   body(data-page="referral-partners")
+    include parts/preloader/preloader.pug
     include parts/header/header.pug
     div(id="js-scroll" data-scroll-container class="main-container")
-      div(data-scroll-section)
+      div(data-scroll-section class="intro-wrapper")
         include parts/intro/intro.pug
         +intro('Referral Partners', 'Refer your way into a Tesla', 'SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '© 2022')
-      div(data-scroll-section)
+      div(data-scroll-section id="poster")
         include parts/poster/poster-referral-partners.pug
       div(data-scroll-section id="how-it-works-target" class="how-it-works-target")
         include parts/referral-partners-blocks/how-it-works.pug

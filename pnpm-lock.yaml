@@ -4,6 +4,7 @@ specifiers:
   '@babel/cli': ^7.13.0
   '@babel/core': ^7.5.5
   '@babel/preset-env': ^7.5.5
+  animejs: ^3.2.1
   autoprefixer: ^9.6.1
   babel-loader: ^8.0.6
   chalk: ^2.4.2
@@ -58,6 +59,7 @@ specifiers:
   webpackbar: ^4.0.0
 
 dependencies:
+  animejs: 3.2.1
   chalk: 2.4.2
   clear: 0.1.0
   enquirer: 2.3.6
@@ -2130,6 +2132,10 @@ packages:
   /alphanum-sort/1.0.2:
     resolution: {integrity: sha512-0FcBfdcmaumGPQ0qPn7Q5qTgz/ooXgIyp1rf8ik5bGX8mpE2YHjC0P/eyQvxu1GURYQgq9ozf2mteQ5ZD9YiyQ==}
     dev: true
+
+  /animejs/3.2.1:
+    resolution: {integrity: sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==}
+    dev: false
 
   /ansi-colors/3.2.4:
     resolution: {integrity: sha512-hHUXGagefjN2iRrID63xckIvotOXOojhQKWIPUZ4mNUZ9nLZW+7FMNoE1lOkEhNWYsx/7ysGIuJYCiMAA9FnrA==}

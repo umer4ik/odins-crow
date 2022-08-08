@@ -8,7 +8,7 @@
     height: 64px;
     transition: transform .4s var(--easing);
   }
-  &.active {
+  &.active { /* means burger menu is open */
     background-color: var(--color5);
   }
   &__logo-link {
@@ -72,6 +72,22 @@
           opacity: 0;
         }
       }
+    }
+  }
+  &__pages {
+    opacity: 0;
+  }
+  &__contacts-link {
+    opacity: 0;
+  }
+  .ready & {
+    &__pages {
+      opacity: 1;
+      transition: opacity .4s var(--easing);
+    }
+    &__contacts-link {
+      opacity: 1;
+      transition: opacity .4s var(--easing);
     }
   }
 }

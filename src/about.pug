@@ -3,12 +3,13 @@ html(lang="en")
   include parts/head/head.pug
   +head('About')
   body(data-page="about")
+    include parts/preloader/preloader.pug
     include parts/header/header.pug
     div(id="js-scroll" data-scroll-container class="main-container")
-      div(data-scroll-section)
+      div(data-scroll-section class="intro-wrapper")
         include parts/intro/intro.pug
         +intro('About us', 'We\'ve seen deals from every perspective', 'SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '© 2022')
-      div(data-scroll-section)
+      div(data-scroll-section id="poster")
         include parts/poster/poster-about.pug
       div(data-scroll-section)
         include parts/about-blocks/our-experience.pug

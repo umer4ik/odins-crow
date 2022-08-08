@@ -1,0 +1,16 @@
+.split-text {
+  &__char-container {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  &__visible {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+  }
+  &__invisible {
+    opacity: 0;
+  }
+}

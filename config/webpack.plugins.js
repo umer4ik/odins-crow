@@ -152,7 +152,7 @@ const tailwindInjectCDN = new TailwindInjectCDNPlugin();
 
 module.exports = [
   clean,
-  stylelint,
+  // stylelint,
   cssExtract,
   ...generateHTMLPlugins(),
   pugPlugin,

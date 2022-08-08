@@ -1,6 +1,6 @@
 include ../section/section.pug
 include ../poster/poster-footer.pug
-div(data-scroll data-scroll-offset="-170" data-scroll-sticky data-scroll-target="#how-it-works-target" class="how-it-works-trigger")
+div(data-scroll data-scroll-id="how-it-works" data-scroll-offset="-170" data-scroll-sticky data-scroll-target="#how-it-works-target" class="how-it-works-trigger")
   .section.section--top-gap.how-it-works
     +sectionTitle('How it works', '3.1')
     .how-it-works__blocks
@@ -8,7 +8,7 @@ div(data-scroll data-scroll-offset="-170" data-scroll-sticky data-scroll-target=
         .absolute.flex.items-center.top-5.left-5
           span.mr-3
             include ../icons/number-1.pug
-        img(src=require("/images/3_Page/3.1_img_1.png")).how-it-works__img
+        img(src=require("/images/3_Page/3.1_img_1.png") data-scroll).how-it-works__img
         .how-it-works__text
           .how-it-works__text-block
             .how-it-works__text-title.gentle-underline Review
@@ -19,7 +19,7 @@ div(data-scroll data-scroll-offset="-170" data-scroll-sticky data-scroll-target=
         .absolute.flex.items-center.top-5.left-5
           span.mr-3
             include ../icons/number-2.pug
-        img(src=require("/images/3_Page/3.1_img_2.png")).how-it-works__img
+        img(src=require("/images/3_Page/3.1_img_2.png") data-scroll).how-it-works__img
         .how-it-works__text
           .how-it-works__text-block
             .how-it-works__text-title.gentle-underline Get
@@ -31,7 +31,7 @@ div(data-scroll data-scroll-offset="-170" data-scroll-sticky data-scroll-target=
         .absolute.flex.items-center.top-5.left-5
           span.mr-3
             include ../icons/number-3.pug
-        img(src=require("/images/3_Page/3.1_img_3.png")).how-it-works__img
+        img(src=require("/images/3_Page/3.1_img_3.png") data-scroll).how-it-works__img
         .how-it-works__text
           .how-it-works__text-block
             .how-it-works__text-title.gentle-underline We’ll
@@ -42,7 +42,7 @@ div(data-scroll data-scroll-offset="-170" data-scroll-sticky data-scroll-target=
         .absolute.flex.items-center.top-5.left-5
           span.mr-3
             include ../icons/number-4.pug
-        img(src=require("/images/3_Page/3.1_img_4.png")).how-it-works__img
+        img(src=require("/images/3_Page/3.1_img_4.png") data-scroll).how-it-works__img
         .how-it-works__text
           .how-it-works__text-block
             .how-it-works__text-title.gentle-underline Success
