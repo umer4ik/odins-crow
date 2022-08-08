@@ -40,8 +40,14 @@ const optimizeCss = new OptimizeCssAssetsPlugin({
 
 // Generate robots.txt
 const robots = new RobotstxtPlugin({
-  sitemap: `${config.site_url}/sitemap.xml`,
-  host: config.site_url,
+  // sitemap: `${config.site_url}/sitemap.xml`,
+  // host: config.site_url,
+  policy: [
+    {
+      userAgent: "*",
+      disallow: "/",
+    }
+  ]
 });
 
 // Clean webpack
