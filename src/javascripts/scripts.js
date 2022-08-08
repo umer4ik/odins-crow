@@ -19,6 +19,24 @@ function destroyScroll() {
     $('.time-block, .structures-block, [data-scroll-section]').removeAttr('style')
   }
 }
+const easing = 'cubicBezier(0.165, 0.84, 0.44, 1)'
+
+const lettersOptions = {
+  translateY: ['100%', 0],
+  easing,
+}
+
+let awayTitleAnimated = false
+const animateAwayTitle = () => {
+  if (awayTitleAnimated) return
+  awayTitleAnimated = true
+  anime({
+    targets: '.away-title .split-text__visible:not(.space)',
+    duration: 1000,
+    delay: anime.stagger(100),
+    ...lettersOptions,
+  })
+}
 
 const initScroll = () => {
   if (scroll) {
@@ -197,28 +215,10 @@ const initSplitText = () => {
     elements: document.querySelectorAll('.intro__title, .counters__counter, .counters__loading, .preloader__text'),
   })
 }
-const easing = 'cubicBezier(0.165, 0.84, 0.44, 1)'
-
-const lettersOptions = {
-  translateY: ['100%', 0],
-  easing,
-}
 
 const animateIntroTitle = () => {
   anime({
     targets: '.intro-wrapper .intro__title .split-text__visible:not(.space)',
-    duration: 1000,
-    delay: anime.stagger(100),
-    ...lettersOptions,
-  })
-}
-
-let awayTitleAnimated = false
-const animateAwayTitle = () => {
-  if (awayTitleAnimated) return
-  awayTitleAnimated = true
-  anime({
-    targets: '.away-title .split-text__visible:not(.space)',
     duration: 1000,
     delay: anime.stagger(100),
     ...lettersOptions,
