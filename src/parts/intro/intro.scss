@@ -52,4 +52,17 @@
       cursor: pointer;
     }
   }
+  &--top {
+    .intro__description {
+      position: relative;
+      z-index: 2;
+      transform: scaleY(0);
+      transform-origin: 50% 0;
+    }
+  }
+}
+
+.intro-wrapper {
+  position: relative;
+  z-index: 1;
 }

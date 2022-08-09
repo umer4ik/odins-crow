@@ -8,6 +8,7 @@
   align-items: center;
   position: relative;
   min-height: calc(100vh - 70px);
+  transform: translate(0, 20vh);
   &__number {
     font-size: 46px;
     @media (min-width: 1024px) {

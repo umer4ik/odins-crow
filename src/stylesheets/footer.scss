@@ -4,7 +4,7 @@
     padding-top: 220px;
   }
   @media (min-width: 768px) {
-    min-height: max(1100px, 100vh);
+    min-height: max(1000px, 100vh);
   }
   &__marque {
     width: 100%;
@@ -46,6 +46,8 @@
     }
     @media (min-width: 1024px) {
       width: 33.33%;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
   &__contacts-link {
@@ -59,6 +61,10 @@
     svg {
       width: 33.85px;
       height: 32.16px;
+      @media (min-width: 1280px) {
+        width: auto;
+        height: auto;
+      }
     }
     @media (min-width: 768px) {
       display: flex;

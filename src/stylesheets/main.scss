@@ -46,7 +46,9 @@ body {
 body {
   background-color: var(--white);
   padding-top: 1px;
-  overflow: hidden;
+  @media (min-width: 1024px) {
+    overflow: hidden;
+  }
   &.ready {
     overflow: auto;
   }

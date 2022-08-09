@@ -1,16 +1,25 @@
 mixin intro(title, subtitle, phrase, appendix)
-  .intro.section
+  .intro.section.intro--top
     .intro__container
       .intro__title #{title}
       .lines
         .uppercase.flex.justify-between.items-center.mt-auto.top-0.left-0.absolute.text-xxs.w-full.h-5
-          span ODIN'S CROW LTD.
+          span.preloader-text ODIN'S CROW LTD.
           span(class="flex ml-auto justify-between md:w-1/2 lg:w-1/3 whitespace-nowrap")
-            span(class="hidden md:block") #{phrase}
-            span(class="ml-auto") #{appendix}
-        each val in [1, 2, 3, 4, 5, 6]
+            span(class="hidden md:block preloader-text") #{phrase}
+            span(class="ml-auto preloader-text") #{appendix}
+        each val in [1, 2, 3, 4, 5, 6, 7]
           -var line = 'lines__line lines__line--' + val
           div(class=line)
+        .counters
+          .counters__inner
+            each val in [1, 2, 3, 4, 5, 6]
+              -var line = "counters__line counters__line--" + val
+              div(class=line) 
+                if val == 6
+                  .counters__loading Loading ...
+                .counters__counter-box
+                  div.counters__counter 1.#{val}
       .intro__description.font-bold.tracking-tighter.flex.items-center.justify-between
         span.leading-none #{subtitle}
         span(class="hidden md:block")

@@ -8,6 +8,11 @@
     height: 64px;
     transition: transform .4s var(--easing);
   }
+  &__links {
+    display: flex;
+    width: 33.33%;
+    justify-content: space-between;
+  }
   &.active { /* means burger menu is open */
     background-color: var(--color5);
   }
@@ -83,11 +88,11 @@
   .ready & {
     &__pages {
       opacity: 1;
-      transition: opacity .4s var(--easing);
+      transition: opacity .4s .4s var(--easing);
     }
     &__contacts-link {
       opacity: 1;
-      transition: opacity .4s var(--easing);
+      transition: opacity .4s .4s var(--easing);
     }
   }
 }

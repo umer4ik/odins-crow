@@ -6,12 +6,29 @@ $oneLineHeight: 5.7vh;
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: 5;
   padding-left: 20px;
   padding-right: 20px;
   // opacity: 0.8;
-  background-image: linear-gradient(180deg, transparent 64px, var(--white) 64px);
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    content: '';
+    background-image: linear-gradient(180deg, transparent 64px, var(--white) 64px);
+    z-index: 1;
+    transition: transform .6s var(--easing);
+  }
+  &.up {
+    &::after {
+      transform: translate(0, -100%);
+    }
+  }
   &__inner {
+    position: relative;
+    z-index: 2;
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -37,46 +54,5 @@ $oneLineHeight: 5.7vh;
         margin-top: $oneLineHeight;
       }
     }
-  }
-}
-.counters {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  &__inner {
-    padding-top: calc($oneLineHeight + 3px);
-    width: 100%;
-  }
-  &__line {
-    font-size: calc($oneLineHeight - 5px);
-    line-height: 1;
-    font-weight: 700;
-    display: flex;
-    justify-content: flex-end;
-    overflow: hidden;
-    align-items: center;
-    @for $x from 1 through 8 {
-      &--#{$x} {
-        height: calc($oneLineHeight + $x * 2px + 2px);
-      }
-    }
-  }
-  &__counter-box {
-    @apply md:w-1/2;
-    @apply lg:w-1/3;
-    margin-right: 8px;
-    padding-bottom: 10px;
-  }
-  &__counter {
-    .split-text__char-container {
-      margin-right: -0.05em;
-    }
-  }
-  &__loading {
-    margin-right: auto;
-    letter-spacing: -0.05em;
-    line-height: 1.5;
-    margin-top: -0.25em;
   }
 }

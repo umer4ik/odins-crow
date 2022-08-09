@@ -151,5 +151,23 @@
     .btn-link--hovered & {
       transform: translate(-25px, 0);
     }
+    &--arrows {
+      display: flex;
+      overflow: hidden;
+      width: 30px;
+      span {
+        width: 30px;
+        min-width: 30px;
+        display: flex;
+        justify-content: flex-end;
+        transform: translate(-100%, 0);
+        transition: transform .5s var(--easing);
+      }
+      .btn-link:hover & {
+        span {
+          transform: none;
+        }
+      }
+    }
   }
 }

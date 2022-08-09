@@ -1,6 +1,6 @@
 .how-it-works-target {
   @media (min-width: 1024px) {
-    height: 600vh;
+    height: 800vh;
   }
 }
 .how-it-works-trigger {
@@ -13,7 +13,7 @@
 .how-it-works {
   &__blocks {
     position: relative;
-    min-height: calc(100vh - 340px);
+    min-height: calc(100vh - 280px);
     margin-top: 30px;
     overflow: hidden;
     @media (min-width: 1024px) {
@@ -36,7 +36,7 @@
       width: 100%;
       padding: 0 20px;
     }
-    transition: transform .8s var(--easing);
+    transition: transform 1.4s var(--easing);
     &.show {
       transform: none;
       img {
@@ -93,7 +93,7 @@
     max-width: calc(33.33vw - 40px);
     width: calc(33.33vw - 40px);
     min-width: calc(33.33vw - 40px);
-    margin-left: 20px;
+    margin-left: 35px;
   }
   &__text-block {
     max-width: 323px;

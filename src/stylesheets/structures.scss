@@ -20,7 +20,7 @@
 .structures {
   &__main {
     overflow: hidden;
-    min-height: calc(100vh - 167px);
+    min-height: calc(100vh - 150px);
     margin-top: -135px;
   }
   &__text {
@@ -52,7 +52,7 @@
     left: 9%;
     top: 50%;
     transform: translate(0, -50%);
-    height: 100%;
+    height: calc(100% - 20px);
   }
   &__numbers {
     overflow: hidden;
@@ -66,6 +66,7 @@
     transition: transform .6s var(--easing);
     @media (min-width: 768px) {
       height: 3em;
+      margin-top: -23px;
     }
   }
 }

@@ -2,11 +2,11 @@ import LocomotiveScroll from 'locomotive-scroll'
 import $ from 'jquery'
 import anime from 'animejs'
 import splitText from './split-text'
+import preloader from './preloader'
+import { easing } from './utils'
 
 window.jQuery = $
 window.$ = $
-
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const isHomePage = () => document.body.dataset.page === 'home'
 const isReferralPartnersPage = () => document.body.dataset.page === 'referral-partners'
@@ -19,8 +19,6 @@ function destroyScroll() {
     $('.time-block, .structures-block, [data-scroll-section]').removeAttr('style')
   }
 }
-const easing = 'cubicBezier(0.165, 0.84, 0.44, 1)'
-
 const lettersOptions = {
   translateY: ['100%', 0],
   easing,
@@ -140,8 +138,8 @@ const initScroll = () => {
       if (target1 && target1.el) {
         const { progress } = target1
         $('.how-it-works__block--2').toggleClass('show', progress > 0.25)
-        $('.how-it-works__block--3').toggleClass('show', progress > 0.5)
-        $('.how-it-works__block--4').toggleClass('show', progress > 0.75)
+        $('.how-it-works__block--3').toggleClass('show', progress > 0.45)
+        $('.how-it-works__block--4').toggleClass('show', progress > 0.65)
       }
     }
     const elements = instance.currentElements
@@ -212,78 +210,9 @@ const initBurger = () => {
 
 const initSplitText = () => {
   splitText({
-    elements: document.querySelectorAll('.intro__title, .counters__counter, .counters__loading, .preloader__text'),
+    elements: document.querySelectorAll('.intro__title, .counters__counter, .counters__loading, .preloader-text, .intro-description-split-text'),
   })
 }
-
-const animateIntroTitle = () => {
-  anime({
-    targets: '.intro-wrapper .intro__title .split-text__visible:not(.space)',
-    duration: 1000,
-    delay: anime.stagger(100),
-    ...lettersOptions,
-  })
-}
-
-const animateIntroNumbers = () => new Promise((resolve) => {
-  // Loading... animation
-  anime({
-    targets: '.counters__loading .split-text__visible:not(.space)',
-    delay: anime.stagger(50),
-    ...lettersOptions,
-  })
-
-  // draw lines
-  const linesTl = anime.timeline({
-    duration: 1000,
-    delay: anime.stagger(75),
-    easing,
-  })
-
-  const lines = document.querySelectorAll('.preloader .lines__line')
-  for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i]
-    linesTl.add({
-      targets: line,
-      scaleX: [0, 1],
-    }, i === 0 ? '+=250' : '-=800')
-  }
-
-  // loading dots
-  const loadingDots = anime({
-    targets: [1, 2, 3].map((x) => `.counters__loading .split-text__char-container:nth-last-child(${x})`).join(', '),
-    loop: true,
-    delay: anime.stagger(50),
-    easing,
-    duration: 800,
-    opacity: ['1', '.7', '1'],
-  })
-
-  // counters animation 1.1, 1.2, ...
-  const countersTl = anime.timeline({
-    duration: 400,
-    delay: anime.stagger(75),
-    complete: () => {
-      delay(400).then(() => resolve(loadingDots))
-    },
-    ...lettersOptions,
-  })
-  const counters = document.querySelectorAll('.counters__counter')
-  for (let i = 0; i < counters.length; i += 1) {
-    const counter = counters[i]
-    countersTl.add({
-      targets: counter.querySelectorAll('.split-text__visible:not(.space)'),
-      translateY: ['100%', 0],
-    }, i === 0 ? '+=450' : '-=200') // first animation waits for 100ms; other animations start earlier for 250ms
-  }
-
-  anime({
-    targets: '.preloader__text .split-text__visible:not(.space)',
-    delay: anime.stagger(25),
-    duration: 400,
-    ...lettersOptions,
-  })
-})
 
 const init = (skipScroll) => {
   initNewsletterForm()
@@ -297,151 +226,9 @@ const init = (skipScroll) => {
   initBurger()
 }
 
-const preloading = () => new Promise((resolve) => {
-  const images = document.querySelectorAll('img')
-  let loaded = 0
-  let animated = false
-  const checkDone = (loadingDots) => {
-    if (loaded === images.length && animated) {
-      resolve(loadingDots)
-    }
-  }
-  images.forEach((img) => {
-    if (img.complete) {
-      loaded += 1
-      checkDone()
-    } else {
-      img.addEventListener('load', () => {
-        loaded += 1
-        checkDone()
-      })
-    }
-  })
-  animateIntroNumbers().then((loadingDots) => {
-    animated = true
-    checkDone(loadingDots)
-  })
-})
-
-const postloading = () => new Promise((resolve) => {
-  // 1 line
-  anime({
-    targets: '.preloader .lines__line--2',
-    duration: 1500,
-    easing,
-    translateY: ['0', 'calc(-5.7vh + 18px)'],
-  })
-  anime({
-    targets: '.counters__line--1',
-    duration: 1500,
-    easing,
-    height: '16px',
-    translateY: ['0', 'calc(-5.7vh + 18px)'],
-    opacity: 0,
-  })
-  // 2 line
-  anime({
-    targets: '.preloader .lines__line--3',
-    duration: 1500,
-    easing,
-    translateY: ['0', `calc(-${5.7 * 2}vh + 34px)`],
-  })
-  anime({
-    targets: '.counters__line--2',
-    duration: 1500,
-    easing,
-    height: '16px',
-    translateY: ['0', 'calc(-5.7vh + 21px)'],
-    opacity: 0,
-  })
-  // 3 line
-  anime({
-    targets: '.preloader .lines__line--4',
-    duration: 1500,
-    easing,
-    translateY: ['0', `calc(-${5.7 * 3}vh + 48px)`],
-  })
-  anime({
-    targets: '.counters__line--3',
-    duration: 1500,
-    easing,
-    height: '10px',
-    translateY: ['0', 'calc(-5.7vh + 26px)'],
-    opacity: 0,
-  })
-  // 4 line
-  anime({
-    targets: '.preloader .lines__line--5',
-    duration: 1500,
-    easing,
-    translateY: ['0', `calc(-${5.7 * 4}vh + 58px)`],
-  })
-  anime({
-    targets: '.counters__line--4',
-    duration: 1500,
-    easing,
-    height: '14px',
-    translateY: ['0', 'calc(-5.7vh + 33px)'],
-    opacity: 0,
-  })
-  // 5 line
-  anime({
-    targets: '.preloader .lines__line--6',
-    duration: 1500,
-    easing,
-    translateY: ['0', `calc(-${5.7 * 5}vh + 70px)`],
-  })
-  anime({
-    targets: '.counters__line--5',
-    duration: 1500,
-    easing,
-    height: '10px',
-    translateY: ['0', 'calc(-5.7vh + 43px)'],
-    opacity: 0,
-  })
-  // 6 line
-  anime({
-    targets: '.preloader .lines__line--7',
-    duration: 1500,
-    easing,
-    translateY: ['0', `calc(-${5.7 * 6}vh + 80px)`],
-  })
-  anime({
-    targets: '.counters__line--6',
-    duration: 1500,
-    easing,
-    height: '0',
-    translateY: ['0', 'calc(-5.7vh + 54px)'],
-    opacity: 0,
-    complete: resolve,
-  })
-})
-
-const hidePreloader = () => new Promise((resolve) => {
-  animateIntroTitle()
-  anime({
-    targets: '.preloader',
-    duration: 1000,
-    easing,
-    opacity: [1, 0],
-    complete: () => {
-      $('.preloader').addClass('hide')
-      resolve()
-    },
-  })
-  $('.header').addClass('ready')
-})
-
-const preloader = () => preloading()
-  .then((loadingDots) => {
-    loadingDots.pause()
-    return postloading()
-  }).then(hidePreloader)
-
 $(() => {
   initSplitText()
   preloader().then(() => {
-  // hidePreloader().then(() => {
     console.log('Images are loaded and preloader finished')
     $(window).on('resize', init)
     init()
