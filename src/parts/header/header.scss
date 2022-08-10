@@ -28,6 +28,7 @@
     }
   }
   &__burger {
+    opacity: 0;
     @media (min-width: 768px) {
       display: none;
     }
@@ -86,6 +87,10 @@
     opacity: 0;
   }
   .ready & {
+    &__burger {
+      opacity: 1;
+      transition: opacity .4s .4s var(--easing);
+    }
     &__pages {
       opacity: 1;
       transition: opacity .4s .4s var(--easing);

@@ -163,6 +163,7 @@ const animatePoster = () => new Promise((resolve) => {
   anime({
     targets: '.poster',
     translateY: ['20vh', 0],
+    opacity: [0, 1],
     duration: 800,
     easing,
     complete: resolve,
@@ -175,8 +176,7 @@ const makeHeaderActive = () => new Promise((resolve) => {
 })
 
 const preloader = () => new Promise((resolve) => {
-  // load images
-  // animate counters
+  window.scrollTo(0, 0)
   Promise.all([
     animateIntroNumbers(),
     loadImages(),
@@ -186,11 +186,6 @@ const preloader = () => new Promise((resolve) => {
     .then(animateIntroDescription)
     .then(all([animatePoster, makeHeaderActive]))
     .then(resolve)
-
-  // after preloader finishes
-  // show Odin's Crow
-  // show .intro__description
-  // animate split text of intro-description-split-text
 })
 
 export default preloader

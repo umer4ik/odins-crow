@@ -50,9 +50,16 @@
     }
   }
   .intro__title {
-    height: 187px;
-    margin-bottom: 62px;
-    margin-top: -52px;
+    @media (min-width: 1024px) {
+      height: 187px;
+      margin-bottom: 62px;
+      margin-top: -52px;
+    }
+    .split-text__visible {
+      @media (max-width: 1023px) {
+        transform: none;
+      }
+    }
   }
   .split-text__char-container {
     line-height: 1.3;

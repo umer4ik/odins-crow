@@ -4,6 +4,9 @@ import anime from 'animejs'
 import splitText from './split-text'
 import preloader from './preloader'
 import { easing } from './utils'
+import successDialog from './success-dialog'
+
+window.showSuccessDialog = successDialog.show
 
 window.jQuery = $
 window.$ = $
@@ -178,11 +181,16 @@ const initJoinForm = () => {
   ]
   $('#join-form').on('submit', (e) => {
     e.preventDefault()
+    let invalid = false
     $('#join-form input').each((_, el) => {
-      if ((!el.value || !el.checked) && requiredFields.includes(el.name)) {
-        $(el).addClass('error')
+      if (requiredFields.includes(el.name)) {
+        if ((el.type === 'checkbox' && !el.checked) || (el.type === 'text' && !el.value)) {
+          invalid = true
+          $(el).addClass('error')
+        }
       }
     })
+    if (!invalid) successDialog.show()
   })
   const onInputChange = (e) => {
     if (requiredFields.includes(e.currentTarget.name)) {
@@ -223,6 +231,7 @@ const init = (skipScroll) => {
   } else {
     destroyScroll()
   }
+  $('body').addClass('ready')
   initBurger()
 }
 

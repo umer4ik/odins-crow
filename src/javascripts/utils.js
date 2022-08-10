@@ -25,9 +25,12 @@ export const loadImages = () => new Promise((resolve) => {
   })
 })
 
+export const doubleRaf = (fn) => requestAnimationFrame(() => requestAnimationFrame(fn))
+
 export default {
   delay,
   easing,
   loadImages,
   all,
+  doubleRaf,
 }
