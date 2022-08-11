@@ -100,4 +100,7 @@
       transition: opacity .4s .4s var(--easing);
     }
   }
+  body[data-page="404"] & {
+    background-color: var(--color7);
+  }
 }

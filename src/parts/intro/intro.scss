@@ -61,6 +61,12 @@
       transform-origin: 50% 0;
     }
   }
+  &--404 {
+    height: 100vh;
+    .intro__title {
+      letter-spacing: -0.05em;
+    }
+  }
 }
 
 .intro-wrapper {

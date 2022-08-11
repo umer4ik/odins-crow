@@ -48,6 +48,9 @@ body {
   padding-top: 1px;
   overflow: hidden;
 }
+body[data-page="404"] {
+  background-color: var(--color7);
+}
 html:not(.has-scroll-init) body.ready {
   overflow: auto;
 }

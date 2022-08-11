@@ -13,6 +13,7 @@ window.$ = $
 
 const isHomePage = () => document.body.dataset.page === 'home'
 const isReferralPartnersPage = () => document.body.dataset.page === 'referral-partners'
+const is404Page = () => document.body.dataset.page === '404'
 let scroll = null
 
 function destroyScroll() {
@@ -218,7 +219,7 @@ const initBurger = () => {
 
 const initSplitText = () => {
   splitText({
-    elements: document.querySelectorAll('.intro__title, .counters__counter, .counters__loading, .preloader-text, .intro-description-split-text'),
+    elements: document.querySelectorAll('.intro__title:not(.intro__title--404), .counters__counter, .counters__loading, .preloader-text, .intro-description-split-text'),
   })
 }
 
@@ -237,6 +238,9 @@ const init = (skipScroll) => {
 
 $(() => {
   initSplitText()
+  if (is404Page()) {
+    $('.header').addClass('ready')
+  }
   preloader().then(() => {
     console.log('Images are loaded and preloader finished')
     $(window).on('resize', init)
