@@ -1,3 +1,4 @@
+include parts/section/section.pug
 doctype html
 html(lang="en")
   include parts/head/head.pug
@@ -10,6 +11,8 @@ html(lang="en")
         +intro('Referral Partners', 'Refer your way into a Tesla', 'SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '© 2022')
       div(data-scroll-section id="poster")
         include parts/poster/poster-referral-partners.pug
+      div(data-scroll-section class="section section--top-gap hidden lg:block")
+        +sectionTitle('How it works', '3.1')
       div(data-scroll-section id="how-it-works-target" class="how-it-works-target")
         include parts/referral-partners-blocks/how-it-works.pug
       div(data-scroll-section)

@@ -6,14 +6,15 @@
 .how-it-works-trigger {
   display: none;
   @media (min-width: 1024px) {
-    padding-bottom: 160px;
+    padding-bottom: 0;
+    height: calc(100vh - 70px);
     display: block;
   }
 }
 .how-it-works {
   &__blocks {
     position: relative;
-    min-height: calc(100vh - 280px);
+    min-height: calc(100vh - 84px);
     margin-top: 30px;
     overflow: hidden;
     @media (min-width: 1024px) {

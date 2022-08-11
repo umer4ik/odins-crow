@@ -54,6 +54,7 @@ const initScroll = () => {
       smooth: false,
     },
   })
+  window.scroll = scroll
   let prevY = 0
   const getDirection = (y) => {
     let direction
