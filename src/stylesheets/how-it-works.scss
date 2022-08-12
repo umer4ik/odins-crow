@@ -46,6 +46,11 @@
     }
     &--1 {
       transform: none;
+      .how-it-works__footer {
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        padding: 0;
+      }
     }
     &--2 {
       z-index: 2;
@@ -56,6 +61,11 @@
         width: calc(66.66vw - 60px - 8.9325%);
         max-width: calc(66.66vw - 60px - 8.9325%);
       }
+      .how-it-works__footer-col--left {
+        min-width: calc(66.66vw - 50px - 8.9325%);
+        width: calc(66.66vw - 50px - 8.9325%);
+        max-width: calc(66.66vw - 50px - 8.9325%);
+      }
     }
     &--3 {
       z-index: 3;
@@ -65,6 +75,11 @@
         min-width: calc(66.66vw - 60px - 19.6172%);
         width: calc(66.66vw - 60px - 19.6172%);
         max-width: calc(66.66vw - 60px - 19.6172%);
+      }
+      .how-it-works__footer-col--left {
+        min-width: calc(66.66vw - 50px - 19.6172%);
+        width: calc(66.66vw - 50px - 19.6172%);
+        max-width: calc(66.66vw - 50px - 19.6172%);
       }
     }
     &--4 {
@@ -81,6 +96,16 @@
         min-width: calc(66.66vw - 60px - 32.626%);
         width: calc(66.66vw - 60px - 32.626%);
         max-width: calc(66.66vw - 60px - 32.626%);
+      }
+      .how-it-works__footer-col {
+        margin-right: 20px;
+        padding-right: 0;
+        width: calc(100% - 20px);
+      }
+      .how-it-works__footer-col--left {
+        min-width: calc(66.66vw - 80px - 32.626%);
+        width: calc(66.66vw - 80px - 32.626%);
+        max-width: calc(66.66vw - 80px - 32.626%);
       }
     }
   }
@@ -111,6 +136,33 @@
     margin-top: 33px;
     font-size: 20px;
     line-height: 26px;
+  }
+  &__footer {
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    text-transform: uppercase;
+    justify-content: space-between;
+    bottom: 20px;
+    font-size: 10px;
+    height: 20px;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+  }
+  &__footer-col {
+    &--right {
+      display: flex;
+      margin-left: auto;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+    &--left {
+      max-width: calc(66.666vw - 50px);
+      width: calc(66.666vw - 50px);
+      min-width: calc(66.666vw - 50px);
+    }
   }
 }
 .how-it-works-mobile-title {
