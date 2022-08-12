@@ -27,10 +27,16 @@ export const loadImages = () => new Promise((resolve) => {
 
 export const doubleRaf = (fn) => requestAnimationFrame(() => requestAnimationFrame(fn))
 
+export const lerp = (progress, speedCoefficient = 4, bottomThreshold = 33.3333, total = 100) => {
+  const p = total - (total - bottomThreshold) * (progress * speedCoefficient)
+  return p < bottomThreshold ? bottomThreshold : p
+}
+
 export default {
   delay,
   easing,
   loadImages,
   all,
   doubleRaf,
+  lerp,
 }

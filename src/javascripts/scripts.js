@@ -3,7 +3,7 @@ import $ from 'jquery'
 import anime from 'animejs'
 import splitText from './split-text'
 import preloader from './preloader'
-import { easing } from './utils'
+import { easing, lerp } from './utils'
 import successDialog from './success-dialog'
 
 window.showSuccessDialog = successDialog.show
@@ -40,6 +40,22 @@ const animateAwayTitle = () => {
   })
 }
 
+const moveHowItWorksBlock = ({
+  progress,
+  selector,
+  start,
+  end,
+}) => {
+  if (progress >= start && progress <= end) {
+    const transform = lerp(progress - start, 4, 0, 100)
+    $(selector).css('transform', `translateX(${transform}%)`)
+  } else if (progress < start) {
+    $(selector).css('transform', 'translateX(100%)')
+  } else if (progress > end) {
+    $(selector).css('transform', 'translateX(0)')
+  }
+}
+
 const initScroll = () => {
   if (scroll) {
     destroyScroll()
@@ -73,11 +89,6 @@ const initScroll = () => {
     totalLength = $('#ellipse path').get(0).getTotalLength()
     $('#ellipse path').css('stroke-dasharray', totalLength)
     $('#ellipse path').css('stroke-dashoffset', totalLength)
-  }
-
-  const lerp = (progress, speedCoefficient = 4, bottomThreshold = 33.3333, total = 100) => {
-    const p = total - (total - bottomThreshold) * (progress * speedCoefficient)
-    return p < bottomThreshold ? bottomThreshold : p
   }
 
   $('.intro__description svg').on('click', () => {
@@ -142,9 +153,30 @@ const initScroll = () => {
       const target1 = instance.currentElements['how-it-works']
       if (target1 && target1.el) {
         const { progress } = target1
-        $('.how-it-works__block--2').toggleClass('show', progress > 0.25)
+        // to translateX 0
+        moveHowItWorksBlock({
+          progress,
+          selector: '.how-it-works__block--2',
+          start: 0,
+          end: 0.3,
+        })
+
+        moveHowItWorksBlock({
+          progress,
+          selector: '.how-it-works__block--3',
+          start: 0.3,
+          end: 0.6,
+        })
+
+        moveHowItWorksBlock({
+          progress,
+          selector: '.how-it-works__block--4',
+          start: 0.6,
+          end: 0.9,
+        })
+        $('.how-it-works__block--2').toggleClass('show', progress > 0.15)
         $('.how-it-works__block--3').toggleClass('show', progress > 0.45)
-        $('.how-it-works__block--4').toggleClass('show', progress > 0.65)
+        $('.how-it-works__block--4').toggleClass('show', progress > 0.75)
       }
     }
     const elements = instance.currentElements

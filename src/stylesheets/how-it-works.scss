@@ -37,9 +37,9 @@
       width: 100%;
       padding: 0 20px;
     }
-    transition: transform 1.4s var(--easing);
+    // transition: transform 1.4s var(--easing);
     &.show {
-      transform: none;
+      // transform: none;
       img {
         transform: scale(1);
       }

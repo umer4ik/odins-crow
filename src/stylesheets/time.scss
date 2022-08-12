@@ -38,7 +38,7 @@
   .has-scroll-init & {
     @media (min-width: 1024px) {
       margin-bottom: 0;
-      height: calc(100vh - 375px);
+      height: calc(100vh - 360px);
       width: calc(100% - 20px);
       min-width: calc(100% - 20px);
     }
