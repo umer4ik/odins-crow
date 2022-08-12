@@ -16,12 +16,13 @@ const splitText = ({
   visibleCharClassName = 'split-text__visible',
   invisibleCharClassName = 'split-text__invisible',
   charContainerClassName = 'split-text__char-container',
+  isWord = false,
 }) => {
   for (let i = 0; i < elements.length; i += 1) {
     const element = elements[i]
     const text = element.textContent
     element.classList.add(className)
-    const chars = text.split('')
+    const chars = text.split(isWord ? /\s+/ : '')
     const spans = chars.map((char) => {
       const visible = createSpan(char, visibleCharClassName)
       const invisible = createSpan(char, invisibleCharClassName)

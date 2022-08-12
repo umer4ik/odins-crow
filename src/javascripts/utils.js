@@ -1,6 +1,6 @@
 export const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-export const easing = 'cubicBezier(0.165, 0.84, 0.44, 1)'
+export const easing = 'cubicBezier(0.547, 0, 0.158, 1)'
 
 export const all = (promises) => () => Promise.all(promises.map((x) => x()))
 

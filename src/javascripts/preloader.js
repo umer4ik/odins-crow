@@ -30,20 +30,13 @@ const animateIntroNumbers = () => new Promise((resolve) => {
   })
 
   // draw lines
-  const linesTl = anime.timeline({
-    duration: 1000,
-    delay: anime.stagger(75),
+  anime({
+    targets: '.intro--top .lines__line',
+    duration: 2000,
     easing,
+    delay: anime.stagger(75),
+    scaleX: [0, 1],
   })
-
-  const lines = document.querySelectorAll('.intro--top .lines__line')
-  for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i]
-    linesTl.add({
-      targets: line,
-      scaleX: [0, 1],
-    }, i === 0 ? '+=250' : '-=800')
-  }
 
   // loading dots
   const loadingDots = anime({
@@ -55,26 +48,21 @@ const animateIntroNumbers = () => new Promise((resolve) => {
     opacity: ['1', '.7', '1'],
   })
 
-  // counters animation 1.1, 1.2, ...
-  const countersTl = anime.timeline({
-    duration: 400,
-    delay: anime.stagger(75),
-    complete: () => {
-      delay(400).then(() => {
-        loadingDots.pause()
-        resolve()
-      })
-    },
-    ...lettersOptions,
-  })
-  const counters = document.querySelectorAll('.counters__counter')
-  for (let i = 0; i < counters.length; i += 1) {
-    const counter = counters[i]
-    countersTl.add({
-      targets: counter.querySelectorAll('.split-text__visible:not(.space)'),
+  delay(500).then(() => {
+    anime({
+      targets: '.counters__counter .split-text__visible',
+      duration: 1000,
+      delay: anime.stagger(100),
       translateY: ['100%', 0],
-    }, i === 0 ? '+=450' : '-=200') // first animation waits for 100ms; other animations start earlier for 250ms
-  }
+      easing,
+      complete: () => {
+        delay(400).then(() => {
+          loadingDots.pause()
+          resolve()
+        })
+      },
+    })
+  })
 
   anime({
     targets: '.preloader-text .split-text__visible:not(.space)',
@@ -182,10 +170,10 @@ const preloader = () => new Promise((resolve) => {
     loadImages(),
   ])
     .then(animateLinesCollapse)
-    .then(animateIntroTitle)
     .then(animateIntroDescription)
     .then(all([animatePoster, makeHeaderActive]))
     .then(resolve)
+  delay(2500).then(animateIntroTitle)
 })
 
 export default preloader
