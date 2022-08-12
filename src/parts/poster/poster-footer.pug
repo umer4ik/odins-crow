@@ -1,6 +1,6 @@
 mixin posterFooter(phrase, appendix)
   .poster-footer.uppercase.flex.justify-between.mt-auto.bottom-5.left-5.absolute.text-xxs
       span ODIN'S CROW LTD.
-      span(class="hidden md:flex ml-auto justify-between w-1/3 pl-2.5")
+      span(class="flex ml-auto justify-between w-1/3 pl-2.5")
         span(class="hidden md:block") #{phrase}
-        span #{appendix}
+        span(class="ml-auto md:ml-0") #{appendix}

@@ -12,7 +12,9 @@
     font-size: 108px;
     line-height: 1;
     font-weight: 700;
+    letter-spacing: -5px;
     @media (min-width: 1024px) {
+      letter-spacing: -9px;
       font-size: 190px;
     }
   }
@@ -26,12 +28,14 @@
   &__row {
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
     @media (min-width: 768px) {
       margin-top: 120px;
       height: 450px;
       flex-direction: row;
       align-items: stretch;
       justify-content: space-between;
+      padding-bottom: 0;
     }
   }
   &__col {
@@ -100,6 +104,10 @@
 }
 
 .newsletter-form {
+  margin-top: 40px;
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
   &__control {
     display: flex;
     position: relative;

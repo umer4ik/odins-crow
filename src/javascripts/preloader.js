@@ -164,7 +164,7 @@ const makeHeaderActive = () => new Promise((resolve) => {
 })
 
 const preloader = () => new Promise((resolve) => {
-  window.scrollTo(0, 0)
+  delay(100).then(() => window.scrollTo(0, 0))
   Promise.all([
     animateIntroNumbers(),
     loadImages(),

@@ -14,15 +14,7 @@ window.$ = $
 const isHomePage = () => document.body.dataset.page === 'home'
 const isReferralPartnersPage = () => document.body.dataset.page === 'referral-partners'
 const is404Page = () => document.body.dataset.page === '404'
-let scroll = null
 
-function destroyScroll() {
-  if (scroll) {
-    scroll.destroy()
-    scroll = null
-    $('.time-block, .structures-block, [data-scroll-section]').removeAttr('style')
-  }
-}
 const lettersOptions = {
   translateY: ['100%', 0],
   easing,
@@ -57,10 +49,8 @@ const moveHowItWorksBlock = ({
 }
 
 const initScroll = () => {
-  if (scroll) {
-    destroyScroll()
-  }
-  scroll = new LocomotiveScroll({
+  const isSmallScreen = () => $(window).width() < 1024
+  const scroll = new LocomotiveScroll({
     el: document.querySelector('#js-scroll'),
     smooth: true,
     tablet: {
@@ -71,39 +61,38 @@ const initScroll = () => {
     },
   })
   window.scroll = scroll
-  let prevY = 0
-  const getDirection = (y) => {
-    let direction
-    if (y > prevY) {
-      direction = 'down'
-    } else if (y < prevY) {
-      direction = 'up'
-    } else {
-      direction = 'freeze'
-    }
-    prevY = y
-    return direction
-  }
   let totalLength
-  if (isHomePage()) {
-    totalLength = $('#ellipse path').get(0).getTotalLength()
-    $('#ellipse path').css('stroke-dasharray', totalLength)
-    $('#ellipse path').css('stroke-dashoffset', totalLength)
+  let ellipseAnimation = null
+  const resetEllipse = () => {
+    if (isHomePage() && !isSmallScreen()) {
+      totalLength = $('#ellipse path').get(0).getTotalLength()
+      $('#ellipse path').css('stroke-dasharray', totalLength)
+      $('#ellipse path').css('stroke-dashoffset', totalLength)
+      console.log('totalLength', totalLength)
+    }
   }
+  resetEllipse()
 
   $('.intro__description svg').on('click', () => {
-    if (scroll) {
-      scroll.scrollTo('#poster', { offset: -64 })
-    }
+    scroll.scrollTo('#poster', { offset: -64 })
+  })
+  let resizeTimeout
+  $(window).on('resize', () => {
+    if (resizeTimeout) clearTimeout(resizeTimeout)
+    resizeTimeout = setTimeout(() => {
+      scroll.update()
+    }, 600)
   })
 
   scroll.on('scroll', (instance) => {
-    // hide header
-    const direction = getDirection(instance.delta.y)
-    if (direction === 'down' && instance.delta.y > 100) {
-      $('.header').addClass('js-hidden')
-    } else if (direction === 'up' && instance.delta.y < 300) {
-      $('.header').removeClass('js-hidden')
+    const sm = isSmallScreen()
+    const elements = instance.currentElements
+    if (Object.keys(elements).some((key) => key.startsWith('img'))) {
+      Object.values(elements).forEach((x) => !x.el.classList.contains('zoom-out') && x.el.classList.add('zoom-out'))
+    }
+    if (sm) return
+    if (elements['away-title']) {
+      animateAwayTitle()
     }
     if (isHomePage()) {
       const target1 = instance.currentElements['time-trigger']
@@ -121,9 +110,17 @@ const initScroll = () => {
             const width3 = lerp(progress - 0.5, 8, 33.33333, 50)
             $('.time-block--3').css('min-width', `calc(${width3}% - 20px)`)
           }
-          if (progress > 0.75) {
-            const length = lerp(progress - 0.75, 4, 0, totalLength)
-            $('#ellipse path').css('stroke-dashoffset', `${length}px`)
+          if (progress > 0.66) {
+            // const length = lerp(progress - 0.75, 4, 0, totalLength)
+            // $('#ellipse path').css('stroke-dashoffset', `${length}px`)
+            if (!ellipseAnimation) {
+              ellipseAnimation = anime({
+                targets: '#ellipse path',
+                strokeDashoffset: [totalLength, 0],
+                easing,
+                duration: 1000,
+              })
+            }
           }
         }
       }
@@ -178,13 +175,6 @@ const initScroll = () => {
         $('.how-it-works__block--3').toggleClass('show', progress > 0.45)
         $('.how-it-works__block--4').toggleClass('show', progress > 0.75)
       }
-    }
-    const elements = instance.currentElements
-    if (Object.keys(elements).some((key) => key.startsWith('img'))) {
-      Object.values(elements).forEach((x) => !x.el.classList.contains('zoom-out') && x.el.classList.add('zoom-out'))
-    }
-    if (elements['away-title']) {
-      animateAwayTitle()
     }
   })
   // scroll.on('call', (value, way, object) => {
@@ -244,7 +234,7 @@ const initBurger = () => {
     $('.header').toggleClass('active')
   })
   $(window).on('resize', () => {
-    if ($(window).width() > 768) {
+    if ($(window).width() >= 1024) {
       $('.header').removeClass('active')
     }
   })
@@ -264,11 +254,7 @@ const init = (skipScroll) => {
   initNewsletterForm()
   initJoinForm()
   if (skipScroll) return
-  if ($(window).width() > 1024) {
-    initScroll()
-  } else {
-    destroyScroll()
-  }
+  initScroll()
   $('body').addClass('ready')
   initBurger()
 }

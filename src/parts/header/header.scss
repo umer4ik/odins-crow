@@ -9,9 +9,12 @@
     transition: transform .4s var(--easing);
   }
   &__links {
-    display: flex;
     width: 33.33%;
     justify-content: space-between;
+    display: none;
+    @media (min-width: 1024px) {
+      display: flex;
+    }
   }
   &.active { /* means burger menu is open */
     background-color: var(--color5);
@@ -29,7 +32,7 @@
   }
   &__burger {
     opacity: 0;
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: none;
     }
     position: relative;

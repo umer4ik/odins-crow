@@ -4,9 +4,10 @@
   flex-direction: column;
   justify-content: flex-end;
   padding-top: 90px;
-  padding-bottom: 5vh;
+  padding-bottom: 20px;
   min-height: 75vh;
   @media (min-width: 640px) {
+    padding-bottom: 5vh;
     height: 70vh;
   }
   @media (min-width: 1024px) {
