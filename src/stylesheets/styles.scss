@@ -32,7 +32,7 @@
 @import "split-text.scss";
 @import "../parts/preloader/preloader.scss";
 @import "dialog.scss";
-/* stylelint-disable scss/at-rule-no-unknown */
+@import "curtain.scss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,11 +1,11 @@
 include ../helpers.pug
 header.header.fixed.w-full.top-0.left-0
   .header__inner.flex.h-full.justify-between.items-center
-    a(href="/").header__logo-link.font-bold.tracking-tighter Odin’s Crow
+    a(href="/" data-internal data-page="home").header__logo-link.font-bold.tracking-tighter Odin’s Crow
     div(class="header__links")
       .header__pages
-        a(href="/about.html").header__page-link.link-hover-underline About
-        a(href="/referral-partners.html").header__page-link.ml-4.link-hover-underline Referral Partners
+        a(href="/about.html" data-internal data-page="about").header__page-link.link-hover-underline About
+        a(href="/referral-partners.html" data-internal data-page="referral-partners").header__page-link.ml-4.link-hover-underline Referral Partners
       a(href="mailto:info@obys.agency", class="md:flex header__contacts-link link-underlined hidden items-center")
         include ../icons/header-contact-icon.pug
         span.ml-2 Get in touch
@@ -13,9 +13,9 @@ header.header.fixed.w-full.top-0.left-0
       div
 .mobile-menu
   .mobile-menu__nav
-    a(href="/").mobile-menu__nav-link Home
-    a(href="/about.html").mobile-menu__nav-link About 
-    a(href="/referral-partners.html").mobile-menu__nav-link Referral Partners
+    a(href="/" data-internal data-page="home").mobile-menu__nav-link Home
+    a(href="/about.html" data-internal data-page="about").mobile-menu__nav-link About 
+    a(href="/referral-partners.html" data-internal data-page="referral-partners").mobile-menu__nav-link Referral Partners
   .mobile-menu__social
     div(class="text-xxs mb-5 tracking-tight") SOCIAL NETWORKS: 
     +flipLink('Twitter', 'https://twitter.com/')

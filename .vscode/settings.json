@@ -12,5 +12,8 @@
   "tailwindCSS.includeLanguages": {
     "pug": "html"
   },
-  "tailwindCSS.emmetCompletions": true
+  "tailwindCSS.emmetCompletions": true,
+  "cSpell.words": [
+    "postloader"
+  ]
 }

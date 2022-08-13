@@ -32,6 +32,14 @@ export const lerp = (progress, speedCoefficient = 4, bottomThreshold = 33.3333, 
   return p < bottomThreshold ? bottomThreshold : p
 }
 
+export const getPageHTML = (url) => fetch(url)
+  .then((response) => response.text())
+  .then((text) => {
+    const dom = new DOMParser().parseFromString(text, 'text/html')
+    const content = dom.querySelector('.main-container')
+    return content.innerHTML
+  })
+
 export default {
   delay,
   easing,

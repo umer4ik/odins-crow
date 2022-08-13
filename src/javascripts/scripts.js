@@ -1,15 +1,32 @@
 import LocomotiveScroll from 'locomotive-scroll'
 import $ from 'jquery'
 import anime from 'animejs'
-import splitText from './split-text'
 import preloader from './preloader'
-import { easing, lerp } from './utils'
+import {
+  delay,
+  easing,
+  getPageHTML,
+  lerp,
+} from './utils'
 import successDialog from './success-dialog'
+import router from './router'
+import { hideCurtain, showCurtain } from './transitions'
+import initSplitText from './init-split-text'
+import postloader from './postloader'
 
 window.showSuccessDialog = successDialog.show
 
 window.jQuery = $
 window.$ = $
+
+const odinsCrow = {
+  scroll: null,
+  destroyScroll: () => {
+    odinsCrow.scroll.destroy()
+    $('[data-scroll-section]').removeAttr('style')
+  },
+}
+window.odinsCrow = odinsCrow
 
 const isHomePage = () => document.body.dataset.page === 'home'
 const isReferralPartnersPage = () => document.body.dataset.page === 'referral-partners'
@@ -48,6 +65,12 @@ const moveHowItWorksBlock = ({
   }
 }
 
+$(document.body).on('click', '.intro__description svg', () => {
+  if (odinsCrow.scroll) {
+    odinsCrow.scroll.scrollTo('#poster', { offset: -64 })
+  }
+})
+
 const initScroll = () => {
   const isSmallScreen = () => $(window).width() < 1024
   const scroll = new LocomotiveScroll({
@@ -60,7 +83,7 @@ const initScroll = () => {
       smooth: false,
     },
   })
-  window.scroll = scroll
+  odinsCrow.scroll = scroll
   let totalLength
   let ellipseAnimation = null
   const resetEllipse = () => {
@@ -68,14 +91,9 @@ const initScroll = () => {
       totalLength = $('#ellipse path').get(0).getTotalLength()
       $('#ellipse path').css('stroke-dasharray', totalLength)
       $('#ellipse path').css('stroke-dashoffset', totalLength)
-      console.log('totalLength', totalLength)
     }
   }
   resetEllipse()
-
-  $('.intro__description svg').on('click', () => {
-    scroll.scrollTo('#poster', { offset: -64 })
-  })
   let resizeTimeout
   $(window).on('resize', () => {
     if (resizeTimeout) clearTimeout(resizeTimeout)
@@ -177,9 +195,11 @@ const initScroll = () => {
       }
     }
   })
-  // scroll.on('call', (value, way, object) => {
-  //   console.log(value, way, object)
-  // })
+}
+
+const destroyScroll = () => {
+  window.scrollTo(0, 0)
+  odinsCrow.scroll.destroy()
 }
 
 const initNewsletterForm = () => {
@@ -233,20 +253,13 @@ const initBurger = () => {
   $('.header__burger').on('click', () => {
     $('.header').toggleClass('active')
   })
+  $('.mobile-menu__nav-link').on('click', () => {
+    $('.header').removeClass('active')
+  })
   $(window).on('resize', () => {
     if ($(window).width() >= 1024) {
       $('.header').removeClass('active')
     }
-  })
-}
-
-const initSplitText = () => {
-  splitText({
-    elements: document.querySelectorAll('.intro__title:not(.intro__title--404), .counters__loading, .preloader-text, .intro-description-split-text'),
-  })
-  splitText({
-    elements: document.querySelectorAll('.counters__counter'),
-    isWord: true,
   })
 }
 
@@ -268,5 +281,28 @@ $(() => {
     console.log('Images are loaded and preloader finished')
     $(window).on('resize', init)
     init()
+  })
+  router.init({
+    before: async (path) => {
+      document.body.classList.add('navigation-in-progress')
+      const promises = [showCurtain()]
+      if (!router.pagesCache[path]) {
+        promises.unshift(getPageHTML(path))
+      }
+      const [result] = await Promise.all(promises)
+      destroyScroll()
+      if (!router.pagesCache[path]) {
+        router.pagesCache[path] = result
+      }
+    },
+    after: async (path) => {
+      const pageHTML = router.pagesCache[path]
+      document.querySelector('.main-container').innerHTML = pageHTML
+      hideCurtain()
+      await postloader()
+      await delay(100)
+      initScroll()
+      document.body.classList.remove('navigation-in-progress')
+    },
   })
 })
