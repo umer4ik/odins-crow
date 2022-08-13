@@ -278,7 +278,6 @@ $(() => {
     $('.header').addClass('ready')
   }
   preloader().then(() => {
-    console.log('Images are loaded and preloader finished')
     $(window).on('resize', init)
     init()
   })
