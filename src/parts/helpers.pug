@@ -4,6 +4,6 @@ mixin flipLink(text, href)
     span(class="flip-link__text flip-link__text--hover") #{text}
 
 mixin internalFlipLink(text, href, page)
-  a(href=href target="_blank" data-internal data-page=page class="flip-link text-base md:text-xl block bt-1-black bb-1-black relative overflow-hidden tracking-tight")
+  a(href=href data-internal data-page=page class="flip-link text-base md:text-xl block bt-1-black bb-1-black relative overflow-hidden tracking-tight")
     span(class="flip-link__text flip-link__text--default") #{text}
     span(class="flip-link__text flip-link__text--hover") #{text}

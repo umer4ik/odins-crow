@@ -27,9 +27,9 @@ footer.footer
       
       .footer__col
         .footer__links.footer__links--site 
-          +internalFlipLink('Home', '/')
-          +internalFlipLink('About', '/about.html')
-          +internalFlipLink('Referral partners', '/referral-partners.html')
+          +internalFlipLink('Home', '/', 'home')
+          +internalFlipLink('About', '/about.html', 'about')
+          +internalFlipLink('Referral partners', '/referral-partners.html', 'referral-partners')
         .footer__links.footer__links--social
           div(class="text-xxs mb-5") SOCIAL NETWORKS: 
           +flipLink('Twitter', 'https://twitter.com/')

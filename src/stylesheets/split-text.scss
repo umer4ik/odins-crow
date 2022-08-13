@@ -14,3 +14,11 @@
     opacity: 0;
   }
 }
+.intro__title:not(.intro__title--404),
+.counters__loading,
+.preloader-text,
+.intro-description-split-text {
+  &:not(.split-text) {
+    opacity: 0;
+  }
+}

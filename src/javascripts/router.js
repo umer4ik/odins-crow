@@ -2,6 +2,8 @@ const isInternalLink = (link) => link.getAttribute('data-internal') !== null
 const isCurrentPage = (href) => new URL(href, window.location.origin).pathname
   === window.location.pathname
 
+const firstPage = document.body.getAttribute('data-page')
+
 const router = {
   init({
     before,
@@ -18,18 +20,21 @@ const router = {
       }
       if (link && isInternalLink(link)) {
         e.preventDefault()
-        const href = e.target.getAttribute('href')
+        const href = link.getAttribute('href')
         router.navigate(href, { page: link.dataset.page })
       }
     })
-    window.addEventListener('popstate', () => {
-      this.navigate(window.location.pathname, { skipPopState: true })
+    window.addEventListener('popstate', ({ state }) => {
+      this.navigate(
+        window.location.pathname,
+        { skipPopState: true, page: state ? state.page : firstPage },
+      )
     })
   },
   async navigate(path, { skipPopState, page } = {}) {
     this.blockTransition = true
     if (!skipPopState) {
-      window.history.pushState({}, '', path)
+      window.history.pushState({ page }, '', path)
     }
     if (page) {
       document.body.dataset.page = page
