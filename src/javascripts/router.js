@@ -14,15 +14,14 @@ const router = {
     window.addEventListener('click', (e) => {
       const link = e.target.closest('a')
       if (!link) return
+      if (!isInternalLink(link)) return
       if (isCurrentPage(link.href)) {
         e.preventDefault()
         return
       }
-      if (link && isInternalLink(link)) {
-        e.preventDefault()
-        const href = link.getAttribute('href')
-        router.navigate(href, { page: link.dataset.page })
-      }
+      e.preventDefault()
+      const href = link.getAttribute('href')
+      router.navigate(href, { page: link.dataset.page })
     })
     window.addEventListener('popstate', ({ state }) => {
       this.navigate(
