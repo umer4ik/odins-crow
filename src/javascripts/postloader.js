@@ -9,7 +9,13 @@ import { all, delay } from './utils'
 
 const postloader = () => new Promise((resolve) => {
   initSplitText()
-  document.querySelector('.counters').style.display = 'none'
+  const counters = document.querySelector('.counters')
+  if (counters) {
+    counters.style.display = 'none'
+  } else {
+    resolve()
+    return
+  }
   Promise.all([
     animateLinesCollapse({
       duration: 600,

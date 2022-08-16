@@ -31,6 +31,7 @@ window.odinsCrow = odinsCrow
 const isHomePage = () => document.body.dataset.page === 'home'
 const isReferralPartnersPage = () => document.body.dataset.page === 'referral-partners'
 const is404Page = () => document.body.dataset.page === '404'
+const isPrivacyPage = () => document.body.dataset.page === 'privacy-policy'
 
 const lettersOptions = {
   translateY: ['100%', 0],
@@ -276,7 +277,7 @@ const init = (skipScroll) => {
 $(() => {
   initSplitText()
 
-  if (is404Page()) {
+  if (is404Page() || isPrivacyPage()) {
     $('.header').addClass('ready')
     $('body').removeClass('preloading')
     $(window).on('resize', init)

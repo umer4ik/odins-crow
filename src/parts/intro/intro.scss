@@ -39,6 +39,9 @@
     .split-text__char-container {
       margin-right: -0.05em;
     }
+    &--static {
+      letter-spacing: -0.05em;
+    }
   }
   &__description {
     color: var(--white);
