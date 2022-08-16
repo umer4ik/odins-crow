@@ -223,12 +223,12 @@ const initJoinForm = () => {
     'zipCode',
     'agreement',
   ]
-  $('#join-form').on('submit', (e) => {
+  $(document.body).on('submit', '#join-form', (e) => {
     e.preventDefault()
     let invalid = false
     $('#join-form input').each((_, el) => {
       if (requiredFields.includes(el.name)) {
-        if ((el.type === 'checkbox' && !el.checked) || (el.type === 'text' && !el.value)) {
+        if ((el.type === 'checkbox' && !el.checked) || (['text', 'email', 'tel'].includes(el.type) && !el.value)) {
           invalid = true
           $(el).addClass('error')
         }
@@ -245,8 +245,8 @@ const initJoinForm = () => {
       }
     }
   }
-  $('#join-form input').on('input', onInputChange)
-  $('#join-form input').on('change', onInputChange)
+  $(document.body).on('input', '#join-form input', onInputChange)
+  $(document.body).on('change', '#join-form input', onInputChange)
 }
 
 const initBurger = () => {
