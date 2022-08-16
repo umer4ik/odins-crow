@@ -198,6 +198,7 @@ const initScroll = () => {
 }
 
 const destroyScroll = () => {
+  awayTitleAnimated = false
   window.scrollTo(0, 0)
   odinsCrow.scroll.destroy()
 }
