@@ -69,12 +69,19 @@ $oneLineHeight: 5.7vh;
   .lines {
     z-index: 1;
     overflow: visible;
+    visibility: hidden;
     &__line {
       flex-shrink: 0;
       &:not(.lines__line--1) {
         transform: scaleX(0);
         margin-top: $oneLineHeight;
       }
+    }
+  }
+  .ready &,
+  .preloading & {
+    .lines {
+      visibility: visible;
     }
   }
 }

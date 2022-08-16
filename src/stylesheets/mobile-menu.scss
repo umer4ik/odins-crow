@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   transform: translate(0, calc(-100% - 70px));
-  transition: background-color .4s var(--easing), transform .4s var(--easing);
   background-color: var(--white);
   &__nav {
     display: flex;
@@ -39,8 +38,14 @@
     flex-direction: column;
     justify-content: flex-end;
   }
-  .active + & {
+  .ready & {
+    transition: background-color .4s var(--easing), transform .4s var(--easing);
+  }
+  .ready .active + & {
     transform: translate(0, 0);
     background-color: var(--color5);
+  }
+  body[data-page="404"].ready .active + & {
+    background-color: var(--color7);
   }
 }

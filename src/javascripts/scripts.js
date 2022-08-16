@@ -274,10 +274,17 @@ const init = (skipScroll) => {
 
 $(() => {
   initSplitText()
+
   if (is404Page()) {
     $('.header').addClass('ready')
+    $('body').removeClass('preloading')
+    $(window).on('resize', init)
+    init()
+  } else {
+    $('body').addClass('preloading')
   }
   preloader().then(() => {
+    $('body').removeClass('preloading')
     $(window).on('resize', init)
     init()
   })
