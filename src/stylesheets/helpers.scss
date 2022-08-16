@@ -94,6 +94,11 @@
       height: 80px;
     }
   }
+  &--more-about-us {
+    @media (max-width: 500px) {
+      max-width: 100%;
+    }
+  }
   &::after {
     z-index: 1;
     content: "";

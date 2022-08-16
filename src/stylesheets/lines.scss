@@ -70,6 +70,9 @@ $oneLineHeight: 5.7vh;
     z-index: 1;
     overflow: visible;
     visibility: hidden;
+    @media (max-width: 639px) {
+      margin-top: 26px;
+    }
     &__line {
       flex-shrink: 0;
       &:not(.lines__line--1) {
