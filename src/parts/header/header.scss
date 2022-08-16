@@ -8,6 +8,10 @@
     height: 64px;
     transition: transform .4s var(--easing);
   }
+  &__inner {
+    position: relative;
+    z-index: 2;
+  }
   &__links {
     width: 33.33%;
     justify-content: space-between;
