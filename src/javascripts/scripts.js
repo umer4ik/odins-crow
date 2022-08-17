@@ -66,9 +66,15 @@ const moveHowItWorksBlock = ({
   }
 }
 
-$(document.body).on('click', '.intro__description svg', () => {
+$(document.body).on('click', '.intro--top .intro__description svg', () => {
   if (odinsCrow.scroll) {
     odinsCrow.scroll.scrollTo('#poster', { offset: -64 })
+  }
+})
+
+$(document.body).on('click', '.away .intro__description svg', () => {
+  if (odinsCrow.scroll) {
+    odinsCrow.scroll.scrollTo('#get-in-touch', { offset: -64 })
   }
 })
 

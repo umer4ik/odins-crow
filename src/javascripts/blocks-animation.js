@@ -94,6 +94,7 @@ export const animateLinesCollapse = ({
   duration = 400,
   delayCoeff = 75,
 } = {}) => new Promise((resolve) => {
+  const oneLineHeight = window.innerHeight <= 900 ? 5.7 : 5.2
   const offsets = [19, 34, 48, 58, 70, 80]
   let i = 2
   while (i <= 7) {
@@ -103,7 +104,7 @@ export const animateLinesCollapse = ({
       easing,
       delay: delayCoeff * (i - 2),
       complete: i === 7 ? resolve : undefined,
-      translateY: ['0', `calc(-${5.7 * (i - 1)}vh + ${offsets[i - 2]}px)`],
+      translateY: ['0', `calc(-${oneLineHeight * (i - 1)}vh + ${offsets[i - 2]}px)`],
     })
     i += 1
   }

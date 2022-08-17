@@ -26,6 +26,10 @@
   &__text {
     width: 459px;
     position: relative;
+    @media (min-width: 1441px) {
+      position: absolute;
+      left: calc(66% + 30px)
+    }
   }
   &__text-block {
     font-size: 34px;

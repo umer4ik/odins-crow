@@ -1,5 +1,5 @@
-/* stylelint-disable selector-class-pattern */
 $oneLineHeight: 5.7vh;
+$oneLineHeightXL: 5.2vh;
 .lines {
   position: relative;
   height: 100px;
@@ -78,6 +78,9 @@ $oneLineHeight: 5.7vh;
       &:not(.lines__line--1) {
         transform: scaleX(0);
         margin-top: $oneLineHeight;
+        @media (min-height: 900px) {
+          margin-top: $oneLineHeightXL;
+        }
       }
     }
   }
@@ -98,9 +101,15 @@ $oneLineHeight: 5.7vh;
   &__inner {
     padding-top: calc($oneLineHeight + 3px);
     width: 100%;
+    @media (min-height: 900px) {
+      padding-top: calc($oneLineHeightXL + 3px);
+    }
   }
   &__line {
     font-size: calc($oneLineHeight - 5px);
+    @media (min-height: 900px) {
+      font-size: calc($oneLineHeightXL - 5px);
+    }
     line-height: 1;
     font-weight: 700;
     display: flex;
@@ -110,6 +119,9 @@ $oneLineHeight: 5.7vh;
     @for $x from 1 through 8 {
       &--#{$x} {
         height: calc($oneLineHeight + $x * 2px + 2px);
+        @media (min-height: 900px) {
+          height: calc($oneLineHeightXL + $x * 2px + 2px);
+        }
       }
     }
   }
