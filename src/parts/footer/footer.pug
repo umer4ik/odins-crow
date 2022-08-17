@@ -7,7 +7,7 @@ footer.footer
       span Odin’s Crow&nbsp;–&nbsp;
   .section.footer__section
     .footer__row
-      .footer__col
+      .footer__col.footer__col--left
         .newsletter
           form.newsletter-form
             .newsletter-form__control 
@@ -25,7 +25,7 @@ footer.footer
             include ../icons/envelope-big.pug
           span.ml-4 Get in touch
       
-      .footer__col
+      .footer__col.footer__col--right
         .footer__links.footer__links--site 
           +internalFlipLink('Home', '/', 'home')
           +internalFlipLink('About', '/about.html', 'about')

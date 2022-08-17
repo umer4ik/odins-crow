@@ -26,15 +26,18 @@
   &__text {
     width: 459px;
     position: relative;
+    @media (min-width: 1024px) {
+      width: 33.33%;
+      padding-right: 20px;
+    }
     @media (min-width: 1441px) {
       position: absolute;
-      left: calc(66% + 30px)
+      left: calc(66% + 10px)
     }
   }
   &__text-block {
     font-size: 34px;
     @apply font-bold;
-    @apply md:text-6xl;
     @apply tracking-tighter;
     position: absolute;
     width: 382px;
@@ -48,6 +51,12 @@
     &.show {
       transform: translateY(calc(-50% - 20px));
       opacity: 1;
+    }
+    @media (max-width: 1150px) {
+      font-size: 40px;
+    }
+    @media (min-width: 1150px) {
+      font-size: 60px;
     }
   }
   &__video {
