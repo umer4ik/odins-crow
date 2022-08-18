@@ -62,4 +62,10 @@
       width: 315px;
     }
   }
+  .get-in-touch-referral-partners & {
+    @media (max-width: 1023px) and (min-width: 500px) {
+      min-height: unset;
+      height: 500px;
+    }
+  }
 }

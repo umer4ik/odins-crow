@@ -1,9 +1,13 @@
 .mobile-menu {
   position: fixed;
-  top: 70px;
-  height: calc(100% - 70px);
+  top: 64px;
+  height: calc(100% - 64px);
+  @media (min-width: 1024px) {
+    top: 70px;
+    height: calc(100% - 70px);
+  }
   width: 100%;
-  z-index: 5;
+  z-index: 6;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -31,9 +35,12 @@
     flex-direction: column;
     justify-content: center;
     height: 20%;
+    @media (min-width: 640px) {
+      justify-content: flex-end;
+    }
   }
   &__footer {
-    height: 5%;
+    height: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

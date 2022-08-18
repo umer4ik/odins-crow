@@ -22,7 +22,8 @@ html(lang="en")
       div(data-scroll-section)
         div(class="md:mt-40 mt-20")
         include parts/get-in-touch/get-in-touch.pug
-        +getInTouch('Do you have more questions?<br>Get in touch')
+        div.get-in-touch-referral-partners
+          +getInTouch('Do you have more questions?<br>Get in touch')
       div(data-scroll-section)
         include parts/footer/footer.pug
     include parts/dialog/dialog.pug

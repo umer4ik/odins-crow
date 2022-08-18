@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  min-height: calc(100vh - 70px);
+  min-height: min(calc(100vh - 70px), 750px);
   transform: translate(0, 20vh);
   opacity: 0;
   &__number {
@@ -19,7 +19,7 @@
   &__title {
     margin-top: min(50vh, 340px);
     font-size: 34px;
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       margin-top: unset;
       font-size: 60px;
     }

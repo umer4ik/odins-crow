@@ -65,50 +65,51 @@ div(data-scroll data-scroll-id="how-it-works" data-scroll-offset="-64px" data-sc
             span 3.1
 div(class="section block lg:hidden section--top-gap")
   +sectionTitle('How it works', '3.1')
-  .relative.mt-5.bg-color3.p-5
-    .absolute.flex.items-center.top-5.left-5
-      span.mr-3
-        include ../icons/number-1.pug
-    img(
-      src=require("/images/3_Page/3.1_img_1.png")
-      class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
-    div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
-      span.gentle-underline Review Terms
-    p(class="mt-5 mb-32 how-it-works-mobile-description") Take a look at our referral agreement. We’ll send over an executed copy prior to any introductions being made. 
-    +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '3.1')
-  
-  .relative.mt-5.bg-color8.p-5
-    .absolute.flex.items-center.top-5.left-5
-      span.mr-3
-        include ../icons/number-2.pug
-    img(
-      src=require("/images/3_Page/3.1_img_2.png")
-      class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
-    div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
-      span.gentle-underline Get Started
-    p(class="mt-5 mb-32 how-it-works-mobile-description") Once you have signed up as a referral partner, please send us an email with the companies that you have in mind. Prior to you reaching out, we need to ensure we haven’t already been in contact with the company.
-    +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '3.1')
+  .how-it-works-mobile
+    .how-it-works-mobile__block.relative.mt-5.bg-color3.p-5
+      .absolute.flex.items-center.top-5.left-5
+        span.mr-3
+          include ../icons/number-1.pug
+      img(
+        src=require("/images/3_Page/3.1_img_1.png")
+        class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
+      div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
+        span.gentle-underline Review Terms
+      p(class="mt-5 mb-32 how-it-works-mobile-description") Take a look at our referral agreement. We’ll send over an executed copy prior to any introductions being made. 
+      +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '3.1')
+    
+    .how-it-works-mobile__block.relative.mt-5.bg-color8.p-5
+      .absolute.flex.items-center.top-5.left-5
+        span.mr-3
+          include ../icons/number-2.pug
+      img(
+        src=require("/images/3_Page/3.1_img_2.png")
+        class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
+      div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
+        span.gentle-underline Get Started
+      p(class="mt-5 mb-32 how-it-works-mobile-description") Once you have signed up as a referral partner, please send us an email with the companies that you have in mind. Prior to you reaching out, we need to ensure we haven’t already been in contact with the company.
+      +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '3.1')
 
-  .relative.mt-5.bg-color5.p-5
-    .absolute.flex.items-center.top-5.left-5
-      span.mr-3
-        include ../icons/number-3.pug
-    img(
-      src=require("/images/3_Page/3.1_img_3.png")
-      class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
-    div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
-      span.gentle-underline We’ll get rolling
-    p(class="mt-5 mb-32 how-it-works-mobile-description") If it looks like a fit, we’ll let you know so you can introduce us to the decision makers to work towards a deal. 
-    +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '3.1')
-  
-  .relative.mt-5.bg-color6.p-5
-    .absolute.flex.items-center.top-5.left-5
-      span.mr-3
-        include ../icons/number-4.pug
-    img(
-      src=require("/images/3_Page/3.1_img_4.png")
-      class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
-    div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
-      span.gentle-underline Success
-    p(class="mt-5 mb-32 how-it-works-mobile-description") If we close, once signatures are on paper we will be in touch and your tesla will be ordered. 
-    +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '3.1')
+    .how-it-works-mobile__block.relative.mt-5.bg-color5.p-5
+      .absolute.flex.items-center.top-5.left-5
+        span.mr-3
+          include ../icons/number-3.pug
+      img(
+        src=require("/images/3_Page/3.1_img_3.png")
+        class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
+      div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
+        span.gentle-underline We’ll get rolling
+      p(class="mt-5 mb-32 how-it-works-mobile-description") If it looks like a fit, we’ll let you know so you can introduce us to the decision makers to work towards a deal. 
+      +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '3.1')
+    
+    .how-it-works-mobile__block.relative.mt-5.bg-color6.p-5
+      .absolute.flex.items-center.top-5.left-5
+        span.mr-3
+          include ../icons/number-4.pug
+      img(
+        src=require("/images/3_Page/3.1_img_4.png")
+        class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
+      div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
+        span.gentle-underline Success
+      p(class="mt-5 mb-32 how-it-works-mobile-description") If we close, once signatures are on paper we will be in touch and your tesla will be ordered. 
+      +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '3.1')

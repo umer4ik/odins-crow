@@ -36,6 +36,9 @@
     @media (min-width: 1420px) {
       font-size: 187px;
     }
+    @media (max-width: 1023px) {
+      padding-bottom: 10px;
+    }
     .split-text__char-container {
       margin-right: -0.05em;
     }
