@@ -54,9 +54,11 @@
     }
     @media (max-width: 1150px) {
       font-size: 40px;
+      line-height: 40px;
     }
     @media (min-width: 1150px) {
       font-size: 60px;
+      line-height: 60px;
     }
   }
   &__video {

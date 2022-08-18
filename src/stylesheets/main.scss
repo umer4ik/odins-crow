@@ -46,7 +46,7 @@ body {
 body {
   background-color: var(--white);
   padding-top: 1px;
-  // overflow: hidden;
+  overflow: hidden;
   transition: transform .4s var(--easing);
 }
 body[data-page="404"] {
