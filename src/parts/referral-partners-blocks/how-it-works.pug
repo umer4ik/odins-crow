@@ -13,6 +13,13 @@ div(data-scroll data-scroll-id="how-it-works" data-scroll-offset="-64px" data-sc
             .how-it-works__text-title.gentle-underline Review
             .how-it-works__text-title.gentle-underline Terms
             .how-it-works__text-content Take a look at our referral agreement. We’ll send over an executed copy prior to any introductions being made. 
+            a(class="btn-link btn-link--more-about-us flex items-center justify-between md:text-xl text-base relative overflow-hidden md:mt-14 md:mb-8 mb-32 mt-12" href="http://www.africau.edu/images/default/sample.pdf" target="_blank")
+              span(class="btn-link__left flex items-center")
+                span.mt-1 
+                  include ../icons/cloud.pug
+                span(class="ml-4 leading-none") Download the PDF
+              span(class="btn-link__right")
+                include ../icons/arrow-right.pug
         .how-it-works__footer 
           .how-it-works__footer-col.how-it-works__footer-col--left ODIN'S CROW LTD.
           .how-it-works__footer-col.how-it-works__footer-col--right 
@@ -75,7 +82,14 @@ div(class="section block lg:hidden section--top-gap")
         class="how-it-works-mobile-img mix-blend-multiply mt-12 sm:w-1/2 sm:block sm:mx-auto")
       div(class="how-it-works-mobile-title mt-10 tracking-tighter font-bold leading-none relative z-1 mb-5 w-full")
         span.gentle-underline Review Terms
-      p(class="mt-5 mb-32 how-it-works-mobile-description") Take a look at our referral agreement. We’ll send over an executed copy prior to any introductions being made. 
+      p(class="mt-5 mb-8 how-it-works-mobile-description") Take a look at our referral agreement. We’ll send over an executed copy prior to any introductions being made. 
+      a(class="btn-link btn-link--more-about-us flex items-center justify-between md:text-xl text-base relative overflow-hidden md:mt-14 md:mb-8 mb-20 mt-12" href="http://www.africau.edu/images/default/sample.pdf" target="_blank")
+        span(class="btn-link__left flex items-center")
+          span.mt-1 
+            include ../icons/cloud.pug
+          span(class="ml-4 leading-none") Download the PDF
+        span(class="btn-link__right")
+          include ../icons/arrow-right.pug
       +posterFooter('SIMPLE DEALS FOR GREAT COMPANIES & OWNERS', '3.1')
     
     .how-it-works-mobile__block.relative.mt-5.bg-color8.p-5
