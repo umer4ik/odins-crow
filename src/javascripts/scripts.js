@@ -45,7 +45,7 @@ const animateAwayTitle = () => {
   anime({
     targets: '.away-title .split-text__visible:not(.space)',
     duration: 1000,
-    delay: anime.stagger(100),
+    delay: anime.stagger(25),
     ...lettersOptions,
   })
 }

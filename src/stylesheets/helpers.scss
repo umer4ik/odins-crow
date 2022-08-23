@@ -81,6 +81,7 @@
   max-width: 315px;
   transition: color .3s var(--easing);
   color: var(--white);
+  padding-bottom: 2px;
   @media (min-width: 768px) {
     color: inherit;
   }

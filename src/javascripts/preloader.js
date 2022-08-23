@@ -26,7 +26,7 @@ const preloader = () => new Promise((resolve) => {
     .then(animateIntroDescription)
     .then(all([animatePoster, makeHeaderActive]))
     .then(resolve)
-  delay(2500).then(animateIntroTitle)
+  delay(2500).then(() => animateIntroTitle({ stagger: 25 }))
 })
 
 export default preloader
