@@ -8,13 +8,13 @@ const fs = require('fs');
 const WebpackBar = require('webpackbar');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const HTMLWebpackPugPlugin = require('html-webpack-pug-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const BeautifyHtmlWebpackPlugin = require('beautify-html-webpack-plugin');
 
 const config = require('./site.config');
 
@@ -76,11 +76,9 @@ const generateHTMLPlugins = () => glob.sync('./src/*.pug').map((dir) => {
     meta: {
       viewport: config.viewport,
     },
-    minify: false,
+    
   });
 });
-
-// const pugPlugin = new HTMLWebpackPugPlugin()
 
 // Sitemap
 const sitemap = new SitemapPlugin(config.site_url, paths, {
@@ -136,25 +134,9 @@ class GoogleAnalyticsPlugin {
   }
 }
 
-class TailwindInjectCDNPlugin {
-  apply(compiler) {
-    compiler.hooks.compilation.tap('TailwindInjectCDNPlugin', (compilation) => {
-      HTMLWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
-        'TailwindInjectCDNPlugin',
-        (data, cb) => {
-          data.html = data.html.replace('</head>', '<script src="https://cdn.tailwindcss.com"></script></head>');
-          cb(null, data);
-        },
-      );
-    });
-  }
-}
-
 const google = new GoogleAnalyticsPlugin({
   id: config.googleAnalyticsUA,
 });
-
-const tailwindInjectCDN = new TailwindInjectCDNPlugin();
 
 module.exports = [
   clean,
@@ -168,5 +150,5 @@ module.exports = [
   config.googleAnalyticsUA && google,
   webpackBar,
   config.env === 'development' && hmr,
-  // config.env === 'development' && tailwindInjectCDN,
+  new BeautifyHtmlWebpackPlugin()
 ].filter(Boolean);
