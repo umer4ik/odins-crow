@@ -211,7 +211,7 @@ const destroyScroll = () => {
 }
 
 const initNewsletterForm = () => {
-  $('#newsletter-email-input').on('input', (e) => {
+  $(document.body).on('input', '#newsletter-email-input', (e) => {
     if (e.target.value) {
       $('#newsletter-email-label').addClass('hide')
     } else {
