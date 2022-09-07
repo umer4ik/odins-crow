@@ -58,7 +58,7 @@ const stylelint = new StyleLintPlugin();
 
 // Extract CSS
 const cssExtract = new MiniCssExtractPlugin({
-  filename: 'style.[contenthash].css',
+  filename: 'style.css',
 });
 
 // HTML generation

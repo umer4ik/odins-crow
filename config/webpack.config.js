@@ -12,7 +12,7 @@ module.exports = {
   ],
   output: {
     path: path.join(config.root, config.paths.dist),
-    filename: '[name].[hash].js',
+    filename: '[name].js',
   },
   mode: ['production', 'development'].includes(config.env)
     ? config.env
