@@ -212,11 +212,16 @@ const destroyScroll = () => {
 
 const initNewsletterForm = () => {
   $(document.body).on('input', '#newsletter-email-input', (e) => {
+    $('#mailpoet_form_1 input[type="email"]').val(e.target.value)
     if (e.target.value) {
       $('#newsletter-email-label').addClass('hide')
     } else {
       $('#newsletter-email-label').removeClass('hide')
     }
+  })
+  $(document.body).on('submit', '.newsletter-form', (e) => {
+    e.preventDefault()
+    $('form.mailpoet_form').trigger('submit')
   })
 }
 
