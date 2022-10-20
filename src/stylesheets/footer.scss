@@ -111,10 +111,6 @@
 }
 
 .newsletter-form {
-  margin-top: 40px;
-  @media (min-width: 768px) {
-    margin-top: 0;
-  }
   &__control {
     display: flex;
     position: relative;
@@ -122,6 +118,7 @@
     @media (min-width: 768px) {
       font-size: 20px;
     }
+    display: none;
   }
   &__label {
     position: absolute;
@@ -135,6 +132,7 @@
     &.hide {
       opacity: 0;
     }
+    display: none;
   }
   &__input {
     flex-grow: 1;
@@ -147,6 +145,7 @@
         opacity: 0.3;
       }
     }
+    display: none;
   }
   &__btn {
     background-color: transparent;
@@ -159,6 +158,7 @@
         transform: none;
       }
     }
+    display: none;
   }
   &__btn-arrow {
     height: 100%;
@@ -170,6 +170,7 @@
     min-width: 40px;
     padding-right: 10px;
     transform: translate(-100%, 0);
+    display: none;
   }
   &__hint {
     text-transform: uppercase;
@@ -179,9 +180,54 @@
     margin-top: 23px;
   }
 }
+.footer {
+  #mailpoet_form_1 {
+    margin-top: 40px;
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
+    form.mailpoet_form {
+      padding: 0;
+      position: relative;
+    }
+    .mailpoet_text {
+      flex-grow: 1;
+      background-color: transparent;
+      height: 64px;
+      padding: 22px 1px !important;
+      border-bottom: 1px solid var(--black);
+      font-size: 20px;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: var(--black);
+        transition: all .3s var(--easing);
+      }
+      &:focus::placeholder {
+        color: var(--color3);
+      }
+    }
+    .mailpoet_submit {
+      position: absolute;
+      width: 40px !important;
+      height: 64px;
+      top: 0;
+      right: 0;
+      color: transparent;
+      background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA0MCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTM2LjAxIDMxSDI0VjMzSDM2LjAxVjM2TDQwIDMyTDM2LjAxIDI4VjMxWiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==");
+      cursor: pointer;
+      background-repeat: repeat;
+      transition: background-position .5s var(--easing); 
+      &:hover {
+        background-position-x: 40px;
+      }
+    }
+  }
+}
 .mailpoet_form_popup_overlay {
-  display: none;
+  // display: none;
 }
 .mailpoet_form {
-  display: none;
+  // display: none;
 }
