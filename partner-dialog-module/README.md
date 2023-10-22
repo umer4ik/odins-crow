@@ -64,7 +64,7 @@ const MATES = [
   ...
 ]
 
-document.addEventListener('click', e => {
+document.body.addEventListener('click', e => {
   if (e.target.closest('.mate')) {
     const partner = MATES[e.target.closest('.mate').dataset.partner]
     showPartnerDialog(partner)
