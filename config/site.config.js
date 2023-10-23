@@ -27,7 +27,7 @@ const config = {
   favicon: path.join(ROOT, '/src/images/favicon.png'),
 
   // Local development URL
-  dev_host: 'localhost',
+  dev_host: '0.0.0.0',
 
   // Local development port
   port: process.env.PORT || 8002,
