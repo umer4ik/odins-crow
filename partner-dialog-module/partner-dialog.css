@@ -154,8 +154,21 @@
   justify-content: flex-start;
   gap: 70px;
 }
+@media screen and (max-width: 768px) {
+  .dialog__footer--partner {
+    justify-content: space-between;
+  }
+}
 .dialog__footer-col--partner {
   width: 260px;
+}
+@media screen and (max-width: 768px) {
+  .dialog__footer-col--partner {
+    width: auto;
+  }
+}
+.team__mates {
+  overflow: hidden;
 }
 .mate {
   cursor: pointer;
@@ -177,6 +190,11 @@
   transition: all 0.6s var(--easing);
   background-position: 18px 0;
   background-repeat: no-repeat;
+}
+@media screen and (max-width: 1024px) {
+  .mate__status::after {
+    background-position: 0 0;
+  }
 }
 .mate__status::before {
   content: '';
