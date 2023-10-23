@@ -347,6 +347,7 @@ $(() => {
   }) => {
     const dialog = getDialog()
     if (!dialog) return
+    const scrollContainer = dialog.querySelector('.dialog__partner-description')
     const contentEl = dialog.querySelector('.dialog__partner-lines-bg')
     const nameEl = dialog.querySelector('.dialog__partner-name')
     const imgEl = dialog.querySelector('.dialog__partner-face img')
@@ -359,6 +360,7 @@ $(() => {
     nameEl.textContent = name
     imgEl.src = img
     doubleRaf(() => {
+      scrollContainer.scrollTop = 0
       dialog.classList.add('show')
     })
   }
