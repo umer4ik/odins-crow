@@ -325,3 +325,70 @@ $(() => {
     },
   })
 })
+
+;(() => {
+  const getDialog = () => document.getElementById('partner-dialog')
+  const doubleRaf = (fn) => requestAnimationFrame(() => requestAnimationFrame(fn))
+  let timeout = null
+  const hide = () => {
+    const dialog = getDialog()
+    if (!dialog) return
+    if (timeout) clearTimeout(timeout)
+    dialog.classList.remove('show')
+    timeout = setTimeout(() => {
+      dialog.style.display = 'none'
+    }, 400)
+  }
+  const show = ({
+    variant,
+    img,
+    name,
+    content,
+  }) => {
+    const dialog = getDialog()
+    if (!dialog) return
+    const contentEl = dialog.querySelector('.dialog__partner-lines-bg')
+    const nameEl = dialog.querySelector('.dialog__partner-name')
+    const imgEl = dialog.querySelector('.dialog__partner-face img')
+    if (timeout) clearTimeout(timeout)
+    dialog.style.display = 'block'
+    dialog.classList.remove('dialog--variant-1')
+    dialog.classList.remove('dialog--variant-2')
+    dialog.classList.add(`dialog--variant-${variant}`)
+    contentEl.innerHTML = content
+    nameEl.textContent = name
+    imgEl.src = img
+    doubleRaf(() => {
+      dialog.classList.add('show')
+    })
+  }
+
+  const addListeners = () => {
+    const dialog = getDialog()
+    if (!dialog) return
+    const overlay = dialog.querySelector('.dialog__overlay')
+    const close = dialog.querySelector('.dialog__close')
+    close.addEventListener('click', hide)
+    overlay.addEventListener('click', hide)
+  }
+  addListeners()
+  window.showPartnerDialog = show
+
+  document.body.addEventListener('click', (e) => {
+    console.log(e.target.closest('.mate'))
+    if (e.target.closest('.mate')) {
+      show({
+        variant: 1, // 1 or 2 to change the mask color of the image
+        // if you see a green mask, use 1, if you see a brown mask, use 2, see the screenshot
+        name: 'Cory Swanson',
+        img: 'https://i0.wp.com/odins-crow.com/wp-content/uploads/2022/10/mate-1.9c41fdad8df8f460d84ea62fa16ec5b0.png?fit=453%2C480&ssl=1',
+        content: `
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias beatae expedita mollitia architecto exercitationem, magnam autem. Veniam, accusantium quibusdam. Consectetur laborum est odio totam sapiente officiis temporibus alias eum aliquid quos ab, recusandae cumque facilis voluptatem eos minima dolores nam sit amet eaque deserunt! Debitis labore libero voluptatibus numquam molestiae.
+          </p>
+        `,
+      })
+    }
+  })
+}
+)();
